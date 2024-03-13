@@ -1,0 +1,2221 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.dashboard..Create(BaseForm)
+Gui.dashboard..Caption("Courier Console")
+Gui.dashboard..Size(20835,8895)
+Gui.dashboard..MinX(0)
+Gui.dashboard..MinY(0)
+Gui.dashboard..Position(0,0)
+Gui.dashboard..BackColor(-2147483633)
+Gui.dashboard..MousePointer(0)
+Gui.dashboard..Event(UnLoad,dashboard_UnLoad)
+Gui.dashboard..MaxButton(False)
+Gui.dashboard..Sizeable(False)
+Gui.dashboard..AlwaysOnTop(False)
+Gui.dashboard..FontName("Tahoma")
+Gui.dashboard..FontSize(8.25)
+Gui.dashboard..ControlBox(True)
+Gui.dashboard..MinButton(True)
+Gui.dashboard..Moveable(True)
+Gui.dashboard..ShowInTaskBar(True)
+Gui.dashboard..TitleBar(True)
+Gui.dashboard.tabCourier.Create(Tab)
+Gui.dashboard.tabCourier.Size(20415,5145)
+Gui.dashboard.tabCourier.Position(75,3000)
+Gui.dashboard.tabCourier.Anchor(2)
+Gui.dashboard.tabCourier.Enabled(True)
+Gui.dashboard.tabCourier.Visible(True)
+Gui.dashboard.tabCourier.Zorder(0)
+Gui.dashboard.tabCourier.FontName("Tahoma")
+Gui.dashboard.tabCourier.FontSize(8.25)
+Gui.dashboard.tabCourier.Tabs(3)
+Gui.dashboard.tabCourier.SetTab(0)
+Gui.dashboard.tabCourier.Caption("Sent")
+Gui.dashboard.tabCourier.SetTab(1)
+Gui.dashboard.tabCourier.Caption("Pending")
+Gui.dashboard.tabCourier.SetTab(2)
+Gui.dashboard.tabCourier.Caption("Failed")
+Gui.dashboard.GsGCFailed.Create(GsGridControl)
+Gui.dashboard.GsGCFailed.Size(20220,4695)
+Gui.dashboard.GsGCFailed.Position(15,45)
+Gui.dashboard.GsGCFailed.Parent("tabCourier",2)
+Gui.dashboard.GsGCFailed.Event(RowCellClick,RowCellClick)
+Gui.dashboard.GsGCFailed.Enabled(True)
+Gui.dashboard.GsGCFailed.Visible(True)
+Gui.dashboard.GsGCFailed.Zorder(0)
+Gui.dashboard.GsGCPending.Create(GsGridControl)
+Gui.dashboard.GsGCPending.Size(20235,4605)
+Gui.dashboard.GsGCPending.Position(45,60)
+Gui.dashboard.GsGCPending.Parent("tabCourier",1)
+Gui.dashboard.GsGCPending.Event(RowCellClick,RowCellClick)
+Gui.dashboard.GsGCPending.Enabled(True)
+Gui.dashboard.GsGCPending.Visible(True)
+Gui.dashboard.GsGCPending.Zorder(0)
+Gui.dashboard.GsGCSent.Create(GsGridControl)
+Gui.dashboard.GsGCSent.Size(20160,4605)
+Gui.dashboard.GsGCSent.Position(105,105)
+Gui.dashboard.GsGCSent.Parent("tabCourier",0)
+Gui.dashboard.GsGCSent.Event(RowCellClick,RowCellClick)
+Gui.dashboard.GsGCSent.Enabled(True)
+Gui.dashboard.GsGCSent.Visible(True)
+Gui.dashboard.GsGCSent.Zorder(0)
+Gui.dashboard.btnRefresh.Create(Button)
+Gui.dashboard.btnRefresh.Size(570,375)
+Gui.dashboard.btnRefresh.Position(11895,2910)
+Gui.dashboard.btnRefresh.Caption("REFRESH")
+Gui.dashboard.btnRefresh.Event(Click,Refresh)
+Gui.dashboard.btnRefresh.Anchor(6)
+Gui.dashboard.btnRefresh.Enabled(True)
+Gui.dashboard.btnRefresh.Visible(True)
+Gui.dashboard.btnRefresh.Zorder(0)
+Gui.dashboard.btnRefresh.FontName("Tahoma")
+Gui.dashboard.btnRefresh.FontSize(8.25)
+Gui.dashboard.btnReQ.Create(Button)
+Gui.dashboard.btnReQ.Size(1290,375)
+Gui.dashboard.btnReQ.Position(7695,2910)
+Gui.dashboard.btnReQ.Caption("Queue")
+Gui.dashboard.btnReQ.Event(Click,Queue)
+Gui.dashboard.btnReQ.Anchor(6)
+Gui.dashboard.btnReQ.Enabled(True)
+Gui.dashboard.btnReQ.Visible(True)
+Gui.dashboard.btnReQ.Zorder(0)
+Gui.dashboard.btnReQ.FontName("Tahoma")
+Gui.dashboard.btnReQ.FontSize(8.25)
+Gui.dashboard.chkAllUsers.Create(CheckBox)
+Gui.dashboard.chkAllUsers.Size(2055,300)
+Gui.dashboard.chkAllUsers.Position(165,2640)
+Gui.dashboard.chkAllUsers.Caption("All Users ")
+Gui.dashboard.chkAllUsers.Event(Click,Refresh)
+Gui.dashboard.chkAllUsers.Anchor(6)
+Gui.dashboard.chkAllUsers.Enabled(True)
+Gui.dashboard.chkAllUsers.Visible(True)
+Gui.dashboard.chkAllUsers.Zorder(0)
+Gui.dashboard.chkAllUsers.FontName("Tahoma")
+Gui.dashboard.chkAllUsers.FontSize(8.25)
+Gui.dashboard.btnDel.Create(Button)
+Gui.dashboard.btnDel.Size(1995,375)
+Gui.dashboard.btnDel.Position(5385,2910)
+Gui.dashboard.btnDel.Caption("Delete Selected")
+Gui.dashboard.btnDel.Event(Click,DeleteEmails)
+Gui.dashboard.btnDel.Anchor(6)
+Gui.dashboard.btnDel.Enabled(True)
+Gui.dashboard.btnDel.Visible(True)
+Gui.dashboard.btnDel.Zorder(0)
+Gui.dashboard.btnDel.FontName("Tahoma")
+Gui.dashboard.btnDel.FontSize(8.25)
+Gui.dashboard.btnSave.Create(Button)
+Gui.dashboard.btnSave.Size(2445,375)
+Gui.dashboard.btnSave.Position(9210,2910)
+Gui.dashboard.btnSave.Caption("Save Email Changes")
+Gui.dashboard.btnSave.Event(Click,btnSave_Click)
+Gui.dashboard.btnSave.Anchor(6)
+Gui.dashboard.btnSave.Enabled(True)
+Gui.dashboard.btnSave.Visible(True)
+Gui.dashboard.btnSave.Zorder(0)
+Gui.dashboard.btnSave.FontName("Tahoma")
+Gui.dashboard.btnSave.FontSize(8.25)
+Gui.dashboard.frame1.Create(Frame)
+Gui.dashboard.frame1.Size(6390,2085)
+Gui.dashboard.frame1.Position(150,435)
+Gui.dashboard.frame1.Caption("Status")
+Gui.dashboard.frame1.Enabled(True)
+Gui.dashboard.frame1.Visible(True)
+Gui.dashboard.frame1.Zorder(0)
+Gui.dashboard.frame1.FontName("Tahoma")
+Gui.dashboard.frame1.FontSize(8.25)
+Gui.dashboard.btnRestartCourier.Create(Button)
+Gui.dashboard.btnRestartCourier.Size(1425,375)
+Gui.dashboard.btnRestartCourier.Position(2190,1035)
+Gui.dashboard.btnRestartCourier.Caption("Restart Courier")
+Gui.dashboard.btnRestartCourier.Event(Click,Courier_Early_Process)
+Gui.dashboard.btnRestartCourier.Parent("frame1")
+Gui.dashboard.btnRestartCourier.Enabled(True)
+Gui.dashboard.btnRestartCourier.Visible(True)
+Gui.dashboard.btnRestartCourier.Zorder(0)
+Gui.dashboard.btnRestartCourier.FontName("Tahoma")
+Gui.dashboard.btnRestartCourier.FontSize(8.25)
+Gui.dashboard.btnTest.Create(Button)
+Gui.dashboard.btnTest.Size(990,375)
+Gui.dashboard.btnTest.Position(2190,570)
+Gui.dashboard.btnTest.Caption("Test Email")
+Gui.dashboard.btnTest.Event(Click,cmdTest_Click)
+Gui.dashboard.btnTest.Parent("frame1")
+Gui.dashboard.btnTest.Enabled(True)
+Gui.dashboard.btnTest.Visible(True)
+Gui.dashboard.btnTest.Zorder(0)
+Gui.dashboard.btnTest.FontName("Tahoma")
+Gui.dashboard.btnTest.FontSize(8.25)
+Gui.dashboard.btnRefresh2.Create(Button)
+Gui.dashboard.btnRefresh2.Size(570,390)
+Gui.dashboard.btnRefresh2.Position(5685,210)
+Gui.dashboard.btnRefresh2.Caption("REFRESH")
+Gui.dashboard.btnRefresh2.FontSize(6)
+Gui.dashboard.btnRefresh2.Event(Click,Get_Courier_ProcTime)
+Gui.dashboard.btnRefresh2.Parent("frame1")
+Gui.dashboard.btnRefresh2.Enabled(True)
+Gui.dashboard.btnRefresh2.Visible(True)
+Gui.dashboard.btnRefresh2.Zorder(0)
+Gui.dashboard.btnRefresh2.FontName("Tahoma")
+Gui.dashboard.lblRestarted.Create(Label,"Restarted (within 5 min)",True,1905,255,0,3705,630,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblRestarted.Parent("frame1")
+Gui.dashboard.lblRestarted.BorderStyle(0)
+Gui.dashboard.lbl2.Create(Label,"Last Process Time:",True,1935,255,0,2190,255,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lbl2.Parent("frame1")
+Gui.dashboard.lbl2.BorderStyle(0)
+Gui.dashboard.lblCourierStatus.Create(Label,"Courier Status:",True,1935,255,0,120,360,True,0,"Arial",8,-986896,0,0)
+Gui.dashboard.lblCourierStatus.Parent("frame1")
+Gui.dashboard.lblCourierStatus.BorderStyle(0)
+Gui.dashboard.lblCourierStatusTxt.Create(Label,"",True,1785,255,0,120,675,True,0,"Arial",10,-986896,0,0)
+Gui.dashboard.lblCourierStatusTxt.Parent("frame1")
+Gui.dashboard.lblCourierStatusTxt.BorderStyle(0)
+Gui.dashboard.lblProcInterval.Create(Label,"Process Interval (Min. 5):",True,1935,255,0,2190,1665,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblProcInterval.ForeColor(0)
+Gui.dashboard.lblProcInterval.Parent("frame1")
+Gui.dashboard.lblProcInterval.BorderStyle(0)
+Gui.dashboard.txtProcInterval.Create(TextBox,"",True,495,300,0,4245,1560,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txtProcInterval.ForeColor(0)
+Gui.dashboard.txtProcInterval.NumericOnly(True)
+Gui.dashboard.txtProcInterval.Parent("frame1")
+Gui.dashboard.lblProcTime.Create(Label,"",True,15,210,0,3705,255,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblProcTime.DefaultValue(" ")
+Gui.dashboard.lblProcTime.Parent("frame1")
+Gui.dashboard.lblProcTime.BorderStyle(0)
+Gui.dashboard.frame2.Create(Frame)
+Gui.dashboard.frame2.Size(8055,2130)
+Gui.dashboard.frame2.Position(7155,390)
+Gui.dashboard.frame2.Caption("SMTP Configuration")
+Gui.dashboard.frame2.Enabled(True)
+Gui.dashboard.frame2.Visible(True)
+Gui.dashboard.frame2.Zorder(0)
+Gui.dashboard.frame2.FontName("Tahoma")
+Gui.dashboard.frame2.FontSize(8.25)
+Gui.dashboard.lblRetry.Create(Label,"Retry Intervals",True,1935,255,0,5475,615,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblRetry.Parent("frame2")
+Gui.dashboard.lblRetry.BorderStyle(0)
+Gui.dashboard.txtSMTPPass.Create(TextBox,"",True,1890,300,0,2625,1635,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txtSMTPPass.PasswordChar("*")
+Gui.dashboard.txtSMTPPass.Parent("frame2")
+Gui.dashboard.lbl2nd.Create(Label,"2nd",True,405,255,0,5475,885,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lbl2nd.Parent("frame2")
+Gui.dashboard.lbl2nd.BorderStyle(0)
+Gui.dashboard.txt2nd.Create(TextBox,"",True,480,300,0,5475,1155,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txt2nd.NumericOnly(True)
+Gui.dashboard.txt2nd.Parent("frame2")
+Gui.dashboard.txt4th.Create(TextBox,"",True,600,300,0,6795,1155,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txt4th.ForeColor(0)
+Gui.dashboard.txt4th.NumericOnly(True)
+Gui.dashboard.txt4th.Parent("frame2")
+Gui.dashboard.lbl4th.Create(Label,"4th+",True,405,255,0,6825,885,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lbl4th.ForeColor(0)
+Gui.dashboard.lbl4th.Parent("frame2")
+Gui.dashboard.lbl4th.BorderStyle(0)
+Gui.dashboard.txt3rd.Create(TextBox,"",True,480,300,0,6105,1155,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txt3rd.ForeColor(0)
+Gui.dashboard.txt3rd.NumericOnly(True)
+Gui.dashboard.txt3rd.Parent("frame2")
+Gui.dashboard.lbl3rd.Create(Label,"3rd",True,405,255,0,6165,885,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lbl3rd.ForeColor(0)
+Gui.dashboard.lbl3rd.Parent("frame2")
+Gui.dashboard.lbl3rd.BorderStyle(0)
+Gui.dashboard.txtSvr.Create(TextBox,"",True,1890,300,0,195,990,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txtSvr.Parent("frame2")
+Gui.dashboard.lblSvr.Create(Label,"SMTP Server",True,1320,255,0,195,720,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblSvr.Parent("frame2")
+Gui.dashboard.lblSvr.BorderStyle(0)
+Gui.dashboard.lblPort.Create(Label,"SMTP Port",True,1305,255,0,195,1395,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblPort.Parent("frame2")
+Gui.dashboard.lblPort.BorderStyle(0)
+Gui.dashboard.txtPort.Create(TextBox,"",True,600,300,0,195,1635,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txtPort.Parent("frame2")
+Gui.dashboard.txtSMTPUser.Create(TextBox,"",True,1890,300,0,2625,1005,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txtSMTPUser.Parent("frame2")
+Gui.dashboard.lblSMTPPass.Create(Label,"SMTP Password",True,1380,255,0,2625,1395,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblSMTPPass.ForeColor(0)
+Gui.dashboard.lblSMTPPass.Parent("frame2")
+Gui.dashboard.lblSMTPPass.BorderStyle(0)
+Gui.dashboard.lblSMTPUser.Create(Label,"SMTP Username",True,1935,255,0,2625,735,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblSMTPUser.Parent("frame2")
+Gui.dashboard.lblSMTPUser.BorderStyle(0)
+Gui.dashboard.chkAuthentication.Create(CheckBox)
+Gui.dashboard.chkAuthentication.Size(2310,300)
+Gui.dashboard.chkAuthentication.Position(2610,270)
+Gui.dashboard.chkAuthentication.Caption("Use SMTP Authentication")
+Gui.dashboard.chkAuthentication.BackColor(15790320)
+Gui.dashboard.chkAuthentication.ForeColor(0)
+Gui.dashboard.chkAuthentication.Parent("frame2")
+Gui.dashboard.chkAuthentication.Enabled(True)
+Gui.dashboard.chkAuthentication.Visible(True)
+Gui.dashboard.chkAuthentication.Zorder(0)
+Gui.dashboard.chkAuthentication.FontName("Tahoma")
+Gui.dashboard.chkAuthentication.FontSize(8.25)
+Gui.dashboard.frame3.Create(Frame)
+Gui.dashboard.frame3.Size(4575,2100)
+Gui.dashboard.frame3.Position(15690,420)
+Gui.dashboard.frame3.Caption("Extras")
+Gui.dashboard.frame3.Enabled(True)
+Gui.dashboard.frame3.Visible(True)
+Gui.dashboard.frame3.Zorder(0)
+Gui.dashboard.frame3.FontName("Tahoma")
+Gui.dashboard.frame3.FontSize(8.25)
+Gui.dashboard.chkReadReceipt.Create(CheckBox)
+Gui.dashboard.chkReadReceipt.Size(1830,300)
+Gui.dashboard.chkReadReceipt.Position(135,1665)
+Gui.dashboard.chkReadReceipt.Caption("Read Receipt")
+Gui.dashboard.chkReadReceipt.BackColor(15790320)
+Gui.dashboard.chkReadReceipt.ForeColor(0)
+Gui.dashboard.chkReadReceipt.Parent("frame3")
+Gui.dashboard.chkReadReceipt.Enabled(True)
+Gui.dashboard.chkReadReceipt.Visible(True)
+Gui.dashboard.chkReadReceipt.Zorder(0)
+Gui.dashboard.chkReadReceipt.FontName("Tahoma")
+Gui.dashboard.chkReadReceipt.FontSize(8.25)
+Gui.dashboard.chkBCC.Create(CheckBox)
+Gui.dashboard.chkBCC.Size(2355,300)
+Gui.dashboard.chkBCC.Position(135,1170)
+Gui.dashboard.chkBCC.Caption("Send BCC to Sender")
+Gui.dashboard.chkBCC.BackColor(15790320)
+Gui.dashboard.chkBCC.ForeColor(0)
+Gui.dashboard.chkBCC.Parent("frame3")
+Gui.dashboard.chkBCC.Enabled(True)
+Gui.dashboard.chkBCC.Visible(True)
+Gui.dashboard.chkBCC.Zorder(0)
+Gui.dashboard.chkBCC.FontName("Tahoma")
+Gui.dashboard.chkBCC.FontSize(8.25)
+Gui.dashboard.chkDebug.Create(CheckBox)
+Gui.dashboard.chkDebug.Size(2205,300)
+Gui.dashboard.chkDebug.Position(135,720)
+Gui.dashboard.chkDebug.Caption("Debug Enabled")
+Gui.dashboard.chkDebug.BackColor(15790320)
+Gui.dashboard.chkDebug.ForeColor(0)
+Gui.dashboard.chkDebug.Parent("frame3")
+Gui.dashboard.chkDebug.Enabled(True)
+Gui.dashboard.chkDebug.Visible(True)
+Gui.dashboard.chkDebug.Zorder(0)
+Gui.dashboard.chkDebug.FontName("Tahoma")
+Gui.dashboard.chkDebug.FontSize(8.25)
+Gui.dashboard.chkLogging.Create(CheckBox)
+Gui.dashboard.chkLogging.Size(1935,300)
+Gui.dashboard.chkLogging.Position(135,210)
+Gui.dashboard.chkLogging.Caption("History Enabled")
+Gui.dashboard.chkLogging.Parent("frame3")
+Gui.dashboard.chkLogging.Enabled(True)
+Gui.dashboard.chkLogging.Visible(True)
+Gui.dashboard.chkLogging.Zorder(0)
+Gui.dashboard.chkLogging.FontName("Tahoma")
+Gui.dashboard.chkLogging.FontSize(8.25)
+Gui.dashboard.txtHist.Create(TextBox,"",True,495,300,0,2535,240,True,0,"Arial",8,-2147483643,1)
+Gui.dashboard.txtHist.Parent("frame3")
+Gui.dashboard.txtHist.ForeColor(0)
+Gui.dashboard.lblHist.Create(Label,"Days to Keep",True,1560,255,0,3180,330,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblHist.Parent("frame3")
+Gui.dashboard.lblHist.BorderStyle(0)
+Gui.dashboard.btnSaveOpt.Create(Button)
+Gui.dashboard.btnSaveOpt.Size(1725,375)
+Gui.dashboard.btnSaveOpt.Position(18675,2850)
+Gui.dashboard.btnSaveOpt.Caption("Save Options")
+Gui.dashboard.btnSaveOpt.Event(Click,SaveOptionstoDB)
+Gui.dashboard.btnSaveOpt.Anchor(10)
+Gui.dashboard.btnSaveOpt.Enabled(True)
+Gui.dashboard.btnSaveOpt.Visible(True)
+Gui.dashboard.btnSaveOpt.Zorder(0)
+Gui.dashboard.btnSaveOpt.FontName("Tahoma")
+Gui.dashboard.btnSaveOpt.FontSize(8.25)
+Gui.dashboard.optCourier2.Create(Option)
+Gui.dashboard.optCourier2.Size(1575,255)
+Gui.dashboard.optCourier2.Position(1515,135)
+Gui.dashboard.optCourier2.Caption("Courier2")
+Gui.dashboard.optCourier2.Event(Click,optCourier2_Click)
+Gui.dashboard.optCourier2.Enabled(True)
+Gui.dashboard.optCourier2.Visible(True)
+Gui.dashboard.optCourier2.Zorder(0)
+Gui.dashboard.optCourier2.FontName("Tahoma")
+Gui.dashboard.optCourier2.FontSize(8.25)
+Gui.dashboard.optCourier3.Create(Option)
+Gui.dashboard.optCourier3.Size(1575,255)
+Gui.dashboard.optCourier3.Position(2910,135)
+Gui.dashboard.optCourier3.Caption("Courier3")
+Gui.dashboard.optCourier3.Event(Click,optCourier3_Click)
+Gui.dashboard.optCourier3.Enabled(True)
+Gui.dashboard.optCourier3.Visible(True)
+Gui.dashboard.optCourier3.Zorder(0)
+Gui.dashboard.optCourier3.FontName("Tahoma")
+Gui.dashboard.optCourier3.FontSize(8.25)
+Gui.dashboard.lblMode.Create(Label,"Mode:",True,1005,255,0,270,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblMode.BorderStyle(0)
+Gui.dashboard.lblStatus.Create(Label,"Loading",False,570,210,0,12690,2640,True,0,"Arial",8,-2147483633,0,0)
+Gui.dashboard.lblStatus.Anchor(6)
+Gui.dashboard.lblStatus.BorderStyle(0)
+Gui.dashboard.pbStatus.Create(ProgressBar)
+Gui.dashboard.pbStatus.Visible(False)
+Gui.dashboard.pbStatus.Size(4890,255)
+Gui.dashboard.pbStatus.Position(12720,3030)
+Gui.dashboard.pbStatus.Anchor(6)
+Gui.dashboard.chkInclAttach.Create(CheckBox)
+Gui.dashboard.chkInclAttach.Enabled(True)
+Gui.dashboard.chkInclAttach.Visible(True)
+Gui.dashboard.chkInclAttach.Zorder(0)
+Gui.dashboard.chkInclAttach.Size(2055,300)
+Gui.dashboard.chkInclAttach.Position(2535,3060)
+Gui.dashboard.chkInclAttach.Caption("Include Attachments")
+Gui.dashboard.chkInclAttach.FontName("Tahoma")
+Gui.dashboard.chkInclAttach.FontSize(8.25)
+Gui.TestEmail..Create(BaseForm)
+Gui.TestEmail..Caption("Test Email")
+Gui.TestEmail..Size(5235,3690)
+Gui.TestEmail..MinX(0)
+Gui.TestEmail..MinY(0)
+Gui.TestEmail..Position(0,0)
+Gui.TestEmail..BackColor(-2147483633)
+Gui.TestEmail..MousePointer(0)
+Gui.TestEmail..Event(UnLoad,TestEmail_UnLoad)
+Gui.TestEmail..AlwaysOnTop(False)
+Gui.TestEmail..FontName("Tahoma")
+Gui.TestEmail..FontSize(8.25)
+Gui.TestEmail..ControlBox(True)
+Gui.TestEmail..MaxButton(True)
+Gui.TestEmail..MinButton(True)
+Gui.TestEmail..Moveable(True)
+Gui.TestEmail..Sizeable(True)
+Gui.TestEmail..ShowInTaskBar(True)
+Gui.TestEmail..TitleBar(True)
+Gui.TestEmail.txtSender.Create(TextBox,"",True,3015,300,0,915,840,True,0,"Arial",8,-2147483643,1)
+Gui.TestEmail.txtRec.Create(TextBox,"",True,2985,300,0,915,1635,True,0,"Arial",8,-2147483643,1)
+Gui.TestEmail.cmdSend.Create(Button)
+Gui.TestEmail.cmdSend.Size(855,375)
+Gui.TestEmail.cmdSend.Position(915,2145)
+Gui.TestEmail.cmdSend.Caption("Send")
+Gui.TestEmail.cmdSend.Event(Click,cmdSend_Click)
+Gui.TestEmail.cmdSend.Enabled(True)
+Gui.TestEmail.cmdSend.Visible(True)
+Gui.TestEmail.cmdSend.Zorder(0)
+Gui.TestEmail.cmdSend.FontName("Tahoma")
+Gui.TestEmail.cmdSend.FontSize(8.25)
+Gui.TestEmail.chkAttach.Create(CheckBox)
+Gui.TestEmail.chkAttach.Size(2370,300)
+Gui.TestEmail.chkAttach.Position(1920,2160)
+Gui.TestEmail.chkAttach.Caption("Include Attachment")
+Gui.TestEmail.chkAttach.Enabled(True)
+Gui.TestEmail.chkAttach.Visible(True)
+Gui.TestEmail.chkAttach.Zorder(0)
+Gui.TestEmail.chkAttach.FontName("Tahoma")
+Gui.TestEmail.chkAttach.FontSize(8.25)
+Gui.TestEmail.lbl1.Create(Label,"Sender email",True,1935,255,0,915,570,True,0,"Arial",8,-2147483633,0,0)
+Gui.TestEmail.lbl1.BorderStyle(0)
+Gui.TestEmail.lbl2.Create(Label,"Recipient Email",True,1935,255,0,915,1380,True,0,"Arial",8,-2147483633,0,0)
+Gui.TestEmail.lbl2.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.sFileRet.Declare
+Variable.Global.bIsAdmin.Declare(Boolean,False)
+Variable.Global.sCProcTime.Declare
+V.Global.bLogging.Declare
+V.Global.sOptIP.Declare
+V.Global.iOptPort.Declare
+V.Global.bAuth.Declare
+V.Global.sSMTPUser.Declare
+V.Global.sSMTPPass.Declare
+V.Global.bDebug.Declare
+V.Global.bBCC.Declare
+V.Global.bReadRcpt.Declare
+V.Global.iProcInterval.Declare
+V.Global.iSecond.Declare
+V.Global.iThird.Declare
+V.Global.iFourth.Declare
+V.Global.iHist.Declare
+V.Global.iMode.Declare(Long, 1)
+V.Global.bLoadData.Declare(Boolean, False)
+V.Global.bCourier.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+		V.Local.sDSN.Declare
+		V.Local.sIcon.Declare
+		V.Local.bExists.Declare
+
+		'Courier mode
+		'False = Courier2 = iMode 1
+		'True = Courier3 = iMode 2
+		Function.Global.General.ReadOptionCommon(5095,0,0,0,0,V.Global.bCourier)
+		F.Intrinsic.Control.If(V.Global.bCourier)
+			V.Global.iMode.Set(2)
+		F.Intrinsic.Control.Else
+			V.Global.iMode.Set(1)
+		F.Intrinsic.Control.EndIf
+		
+		'If being called from Task Scheduler, run Early Process functionality only
+		F.Intrinsic.Control.If(V.Caller.Caller,=,"TSCH02","OR",V.Caller.Caller,=,"TSCH01",V.Caller.Caller,=,"")
+			F.Intrinsic.Control.CallSub(Courier_Early_Process)
+		F.Intrinsic.Control.EndIf
+		
+		'Open ODBC Connections
+		F.ODBC.Connection!con.OpenCommonConnection()
+		F.ODBC.Connection!conx.OpenCompanyConnection()
+		
+		'Set Permissions
+		F.Intrinsic.Control.CallSub(setPermissions)
+		
+		'Set default to use Courier2
+		'Gui.dashboard.optCourier2.Value(1)
+		
+		'Load Options
+		'F.Intrinsic.Control.CallSub(Load_Options)
+		F.Intrinsic.Control.CallSub(setContextMenus)
+		F.Intrinsic.Control.CallSub(Load_ToolTips)
+		
+		Gui.dashboard.lblRestarted.Visible(False)
+		
+		'Set Sent tab as default tab
+		Gui.dashboard.tabCourier.SetTab(0)
+		
+		'Set Form Icons
+		F.Intrinsic.String.Build("{0}\ART\GSS.ico",V.Caller.GlobalDir,V.Local.sIcon)
+		F.Intrinsic.File.Exists(V.Local.sIcon,V.Local.bExists)
+		F.Intrinsic.Control.If(V.Local.bExists,=,True)
+			Gui.dashboard..Icon(V.Local.sIcon)
+			Gui.TestEmail..Icon(V.Local.sIcon)
+		F.Intrinsic.Control.EndIf
+		
+		'Show main form
+		Gui.dashboard..Show
+		
+		'Call refresh to populate tabs
+		F.Intrinsic.Control.CallSub(Refresh)
+				
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+
+Program.Sub.Main.End
+Program.Sub.dashboard_UnLoad.Start
+	F.Intrinsic.Control.Try
+		F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.Catchwhen(20010)
+	F.Intrinsic.Control.EndTry
+	
+	F.Intrinsic.Control.Try
+		F.ODBC.Connection!conx.Close
+	F.Intrinsic.Control.Catchwhen(20010)
+	F.Intrinsic.Control.EndTry
+	
+	F.Intrinsic.Control.End
+
+Program.Sub.dashboard_UnLoad.End
+
+Program.Sub.Load_SentItems.Start
+	F.Intrinsic.Control.Try
+	
+		Gui.dashboard.lblStatus.Caption("Loading Sent Items")
+	
+		'Variables
+		V.Local.sError.Declare
+		V.Local.sSQLSent.Declare
+		V.Local.sSQLAHID.Declare
+		V.Local.sEmail.Declare
+		V.Local.iUserID.Declare
+		V.Local.iCount.Declare(Long,0)
+		V.Local.iCount2.Declare(Long,0)
+		V.Local.iAHID.Declare
+		V.Local.sSQLAttach.Declare
+		V.Local.sAttach.Declare
+		V.Local.sAttachList.Declare
+		V.Local.sFilter.Declare
+		
+		'Check for and close Sent DT, if it already exists		
+		F.Intrinsic.Control.If(V.DataTable.dtSent.Exists,=,True)
+			F.Data.DataTable.Close("dtSent")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtAttach.Exists,=,True)
+			F.Data.DataTable.Close("dtAttach")
+		F.Intrinsic.Control.EndIf
+		
+		'Get user ID and email
+		F.Global.Security.GetUserID(V.Caller.User,V.Caller.CompanyCode,V.Local.iUserID)
+		F.Global.Security.GetUserEmail(V.Caller.User,V.Local.sEmail)
+		
+		'If "All Users" is checked, build query to show all sent items. If not, build query to show only sent items that match the user's User ID OR email address
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkAllUsers.Value,=,1)
+			V.Local.sSQLSent.Set("SELECT EHID, SENTDT AS 'Sent', USERID AS 'UserID', Rtrim(SUBJECT) AS 'Subject', RTrim(SENDERNAME) AS 'Sender', Rtrim(SENDEREMAIL) AS 'SenderEmail', Rtrim(RECIPIENTEMAIL) AS 'RecipientEmail' FROM COURIER_EMAILHIST ORDER BY SENT DESC")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT EHID, SENTDT AS 'Sent', USERID AS 'UserID', Rtrim(SUBJECT) AS 'Subject', Rtrim(SENDERNAME) AS 'Sender', Rtrim(SENDEREMAIL) AS 'SenderEmail', Rtrim(RECIPIENTEMAIL) AS 'RecipientEmail' FROM COURIER_EMAILHIST WHERE USERID = {0} OR SENDEREMAIL = '{1}' ORDER BY SENT DESC",V.Local.iUserID,V.Local.sEmail,V.Local.sSQLSent)
+		F.Intrinsic.Control.EndIf
+		
+		'SQL Statement for Attachments
+		V.Local.sSQLAttach.Set("SELECT A.AHID, A.EHID, Rtrim(A.ATTACHMENTNAME) AS 'Attachmentname', A.ATTACHMENT, B.BODY FROM COURIER_EMLHISTATT A LEFT OUTER JOIN COURIER_EMLHISTBODY B ON A.EHID = B.EHID")
+				
+		'Create Sent DT
+		F.Data.DataTable.CreateFromSQL("dtSent","con",V.Local.sSQLSent,True)
+		
+		'If Include Attachment checkbox is checked
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+			'Create Attachment DT
+			F.Data.DataTable.CreateFromSQL("dtAttach","con",V.Local.sSQLAttach,True)
+			F.Data.DataTable.AddColumn("dtSent","Attachment",String)
+		F.Intrinsic.Control.EndIf
+
+		
+		'Create additional columns for DT
+		F.Data.DataTable.AddColumn("dtSent","Delete",Boolean)
+		
+		
+		'Progress Bar 
+		F.Intrinsic.Control.If(V.DataTable.dtSent.RowCount,<>,0)
+			Gui.dashboard.pbStatus.Max(V.DataTable.dtSent.RowCount)
+		F.Intrinsic.Control.Else
+			Gui.dashboard.pbStatus.Max(100)
+		F.Intrinsic.Control.EndIf
+		Gui.dashboard.pbStatus.Min(0)
+
+
+		'Loop through Sent DT
+		F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtSent.RowCount--,1)
+			V.Local.iCount2.Set(0)
+			Gui.dashboard.pbStatus.Value(V.Local.iCount)
+			
+			'Set Delete value to False
+			F.Data.DataTable.SetValue("dtSent",V.Local.iCount,"Delete",False)
+
+			'If Include Attachment checkbox is checked
+			F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+				'Create Attachment DataView and filter
+				F.Intrinsic.String.Build("EHID = {0}", V.DataTable.dtSent(V.Local.iCount).EHID!FieldValTrim, V.Local.sFilter)
+				F.Data.DataView.Create("dtAttach","dvAttach",22,V.Local.sFilter,"")
+				
+				'Check state of Attachment DT and handle depending on number of attachments			
+				F.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,0)
+					f.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,1)
+						F.Intrinsic.Control.For(V.Local.iCount2,0,V.DataView.dtAttach!dvAttach.RowCount--,1)
+							F.Intrinsic.Control.If(V.Local.iCount2,=,0)
+								F.Data.DataTable.SetValue("dtSent",V.Local.iCount,"Attachment",V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.String.Build("{0}, {1}",V.DataTable.dtSent(V.Local.iCount).Attachment!FieldValTrim,V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim,V.Local.sAttachList)
+								F.Data.DataTable.SetValue("dtSent",V.Local.iCount,"Attachment",V.Local.sAttachList)
+							F.Intrinsic.Control.EndIf				
+						F.Intrinsic.Control.Next(V.Local.iCount2)
+					f.Intrinsic.Control.Else
+						F.Data.DataTable.SetValue("dtSent",V.Local.iCount,"Attachment",V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim)
+					F.Intrinsic.Control.Endif
+				F.Intrinsic.Control.EndIf
+				
+				'Close Attachment DT		
+				F.Data.DataView.Close("dtAttach","dvAttach")
+				
+			F.Intrinsic.Control.EndIf
+
+			
+		F.Intrinsic.Control.Next(V.Local.iCount)
+		
+		'Create Sent GV off of Sent DT	
+		gui.dashboard.GsGCSent.AddGridViewFromDatatable("gvSent","dtSent")
+		
+		'Format Sent GSGC		
+		F.Intrinsic.Control.CallSub(format_GsGCSent)
+		
+		'Set Sent GV as MainView of Sent GSGC			
+		gui.dashboard.GsGCSent.MainView("gvSent")
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry	
+
+Program.Sub.Load_SentItems.End
+
+Program.Sub.Load_PendingItems.Start
+	F.Intrinsic.Control.Try
+	
+		Gui.dashboard.lblStatus.Caption("Loading Pending Items")
+	
+		'Variables
+		V.Local.sError.Declare
+		V.Local.sSQLPend.Declare
+		V.Local.iCount.Declare(Long,0)
+		V.Local.iCount2.Declare(Long,0)
+		V.Local.sSQLAID.Declare
+		V.Local.iAID.Declare
+		V.Local.sSQLAttach.Declare
+		V.Local.sAttach.Declare
+		V.Local.sAttachList.Declare
+		V.Local.sFilter.Declare
+		
+		'Check for and close Pending DT, if it already exists
+		F.Intrinsic.Control.If(V.DataTable.dtPending.Exists,=,True)
+			F.Data.DataTable.Close("dtPending")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtAttach.Exists,=,True)
+			F.Data.DataTable.Close("dtAttach")
+		F.Intrinsic.Control.EndIf
+		
+		'Build query for Pending DT
+		'pending = attempt value set at 1
+		V.Local.sSQLPend.Set("SELECT EID, RTrim(SENDERNAME) AS SENDERNAME, RTrim(SENDEREMAIL) AS SENDEREMAIL, RTrim(RECIPIENTNAME) AS RECIPIENTNAME, RTrim(RECIPIENTEMAIL) AS RECIPIENTEMAIL, RTrim(SUBJECT) AS SUBJECT, RTrim(ERROR) AS ERROR")
+		F.Intrinsic.String.Build("{0}, ERRORDT, ATTEMPT, NEXTDELIVERYATTEMPT, COCODE, USERID, CALLINGPRGM, MODE, RTrim(REPLYTOADDRESS) AS REPLYTOADDRESS, READRECEIPT, ADDITIONALHEADERS, BODY, DEFERREDDELIVERY", V.Local.sSQLPend, V.Local.sSQLPend)
+		F.Intrinsic.String.Build("{0}, EXCLUDEFROMHIST, DONOTALLOWRESEND, META0, META1, META2, META3, META4 FROM COURIER_EMAILBODY WHERE DEFERREDDELIVERY >= now() OR ATTEMPT <= 1", V.Local.sSQLPend, V.Local.sSQLPend)
+		
+		'SQL Statement for Attachments
+		V.Local.sSQLAttach.Set("SELECT A.AID, A.EID, Rtrim(A.ATTACHMENTNAME) AS 'Attachmentname', A.ATTACHMENT, B.BODY FROM COURIER_EMAILATTACH A LEFT OUTER JOIN COURIER_EMAILBODY B ON A.EID = B.EID")
+		
+		'Create Pending DT
+		F.Data.DataTable.CreateFromSQL("dtPending","con",V.Local.sSQLPend,True)
+		'If Include Attachment checkbox is checked
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+			'Create Attachment DT
+			F.Data.DataTable.CreateFromSQL("dtAttach","con",V.Local.sSQLAttach,True)
+			F.Data.DataTable.AddColumn("dtPending","Attachment",String)
+		F.Intrinsic.Control.EndIf
+		
+		'Create additional columns for DT
+		F.Data.DataTable.AddColumn("dtPending","Delete",Boolean)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtPending.RowCount,<>,0)
+			Gui.dashboard.pbStatus.Max(V.DataTable.dtPending.RowCount)
+		F.Intrinsic.Control.Else
+			Gui.dashboard.pbStatus.Max(100)
+		F.Intrinsic.Control.EndIf		
+		Gui.dashboard.pbStatus.Min(0)
+		
+		'Loop through Pending DT
+		F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtPending.RowCount--,1)
+			V.Local.iCount2.Set(0)
+			Gui.dashboard.pbStatus.Value(V.Local.iCount)
+			'Set Delete value to False
+			F.Data.DataTable.SetValue("dtPending",V.Local.iCount,"Delete",False)
+			
+			'If Include Attachment checkbox is checked
+			F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+				'Create DataView and filter
+				F.Intrinsic.String.Build("EID = {0}", V.DataTable.dtPending(V.Local.iCount).EID!FieldValTrim, V.Local.sFilter)
+				F.Data.DataView.Create("dtAttach","dvAttach",22,V.Local.sFilter,"")
+	
+				'Check state of Attachment DT and handle depending on number of attachments
+				F.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,0)
+					f.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,1)
+						F.Intrinsic.Control.For(V.Local.iCount2,0,V.DataView.dtAttach!dvAttach.RowCount--,1)
+							F.Intrinsic.Control.If(V.Local.iCount2,=,0)
+								F.Data.DataTable.SetValue("dtPending",V.Local.iCount,"Attachment",V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.String.Build("{0}, {1}",V.DataTable.dtPending(V.Local.iCount).Attachment!FieldValTrim,V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim,V.Local.sAttachList)
+								F.Data.DataTable.SetValue("dtPending",V.Local.iCount,"Attachment",V.Local.sAttachList)
+							F.Intrinsic.Control.EndIf				
+						F.Intrinsic.Control.Next(V.Local.iCount2)
+					f.Intrinsic.Control.Else
+						F.Data.DataTable.SetValue("dtPending",V.Local.iCount,"Attachment",V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim)
+					F.Intrinsic.Control.Endif
+				F.Intrinsic.Control.EndIf
+				
+				'Close Attachment DT
+				F.Data.DataView.Close("dtAttach","dvAttach")
+				
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.Next(V.Local.iCount)
+		
+		'Create Pending GV off of Pending DT		
+		gui.dashboard.GsGCPending.AddGridViewFromDataTable("gvPending","dtPending")
+		
+		'Format Pending GSGC
+		F.Intrinsic.Control.CallSub(format_GsGCPending)
+		
+		'Set Pending GV as MainView of Pending GSGC	
+		gui.dashboard.GsGCPending.MainView("gvPending")
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry		
+Program.Sub.Load_PendingItems.End
+
+Program.Sub.Load_FailedItems.Start
+	F.Intrinsic.Control.Try
+	
+		Gui.dashboard.lblStatus.Caption("Loading Failed Items")
+		
+		'Variables
+		V.Local.sError.Declare
+		V.Local.sSQLFail.Declare
+		V.Local.iCount.Declare(Long,0)
+		V.Local.iCount2.Declare(Long,0)
+		V.Local.sSQLAID.Declare
+		V.Local.sAID.Declare
+		V.Local.iAID.Declare
+		V.Local.sSQLAttach.Declare
+		V.Local.sAttachTemp.Declare
+		V.Local.sAttach.Declare
+		V.Local.sAttachList.Declare
+		V.Local.sFilter.Declare
+		
+		'Check for and close DT, if it already exists
+		F.Intrinsic.Control.If(V.DataTable.dtFailed.Exists,=,True)
+			F.Data.DataTable.Close("dtFailed")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtAttach.Exists,=,True)
+			F.Data.DataTable.Close("dtAttach")
+		F.Intrinsic.Control.EndIf
+		
+		'Build query for failed messages
+		'failed = attempted at least once and have unsuccessfully sent as of current time
+		V.Local.sSQLFail.Set("SELECT EID, RTrim(SENDERNAME) AS SENDERNAME, RTrim(SENDEREMAIL) AS SENDEREMAIL, RTrim(RECIPIENTNAME) AS RECIPIENTNAME, RTrim(RECIPIENTEMAIL) AS RECIPIENTEMAIL, RTrim(SUBJECT) AS SUBJECT, RTrim(ERROR) AS ERROR")
+		F.Intrinsic.String.Build("{0}, ERRORDT, ATTEMPT, NEXTDELIVERYATTEMPT, COCODE, USERID, CALLINGPRGM, MODE, RTrim(REPLYTOADDRESS) AS REPLYTOADDRESS", V.Local.sSQLFail, V.Local.sSQLFail)
+		F.Intrinsic.String.Build("{0}, READRECEIPT, ADDITIONALHEADERS, BODY, DEFERREDDELIVERY, EXCLUDEFROMHIST, DONOTALLOWRESEND", V.Local.sSQLFail, V.Local.sSQLFail)
+		F.Intrinsic.String.Build("{0}, META0, META1, META2, META3, META4 FROM COURIER_EMAILBODY WHERE ATTEMPT > 1", V.Local.sSQLFail, V.Local.sSQLFail)
+		
+		'SQL Statement for Attachments
+		V.Local.sSQLAttach.Set("SELECT A.AID, A.EID, Rtrim(A.ATTACHMENTNAME) AS 'Attachmentname', A.ATTACHMENT, B.BODY FROM COURIER_EMAILATTACH A LEFT OUTER JOIN COURIER_EMAILBODY B ON A.EID = B.EID")
+		
+		'Create Failed DT
+		F.Data.DataTable.CreateFromSQL("dtFailed","con",V.Local.sSQLFail,True)
+		'If Include Attachment checkbox is checked
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+			'Create Attachment DT
+			F.Data.DataTable.CreateFromSQL("dtAttach","con",V.Local.sSQLAttach,True)		
+			F.Data.DataTable.AddColumn("dtFailed","Attachment",String)			
+		F.Intrinsic.Control.EndIf
+
+		
+		'Create additional columns for DT
+		F.Data.DataTable.AddColumn("dtFailed","Delete",Boolean)
+		F.Data.DataTable.AddColumn("dtFailed","Queue",Boolean)
+		F.Data.DataTable.AddColumn("dtFailed","Age",Long)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtFailed.RowCount,<>,0)
+			Gui.dashboard.pbStatus.Max(V.DataTable.dtFailed.RowCount)
+		F.Intrinsic.Control.Else
+			Gui.dashboard.pbStatus.Max(100)
+		F.Intrinsic.Control.EndIf		
+		Gui.dashboard.pbStatus.Min(0)
+		
+		'Loop through DT
+		F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtFailed.RowCount--,1)
+			Gui.dashboard.pbStatus.Value(V.Local.iCount)
+			'Set Delete flag to false by default
+			F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Delete",False)
+			F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Queue",False)
+			'If Include Attachment checkbox is checked
+			F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+				
+				'Create DataView and filter
+				F.Intrinsic.String.Build("EID = {0}", V.DataTable.dtFailed(V.Local.iCount).EID!FieldValTrim, V.Local.sFilter)
+				F.Data.DataView.Create("dtAttach","dvAttach",22,V.Local.sFilter,"")
+				
+				'Check state of Attachment DT and handle depending on number of attachments
+				F.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,0)
+					V.Local.iCount2.Set(0)
+					f.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,1)
+						F.Intrinsic.Control.For(V.Local.iCount2,0,V.DataView.dtAttach!dvAttach.RowCount--,1)
+								F.Intrinsic.Control.If(V.Local.iCount2,=,0)
+								F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Attachment",V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.String.Build("{0}, {1}",V.DataTable.dtFailed(V.Local.iCount).Attachment!FieldValTrim,V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim,V.Local.sAttachList)
+								F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Attachment",V.Local.sAttachList)
+							F.Intrinsic.Control.EndIf				
+						F.Intrinsic.Control.Next(V.Local.iCount2)
+					f.Intrinsic.Control.Else
+						F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Attachment",V.DataView.dtAttach!dvAttach(V.Local.iCount2).Attachmentname!FieldValTrim)
+					F.Intrinsic.Control.Endif
+				F.Intrinsic.Control.EndIf
+				'Close Attachment DV
+				F.Data.DataView.Close("dtAttach","dvAttach")
+				
+				F.Intrinsic.Control.If(V.DataView.dtAttach!dvAttach.RowCount,>,0)
+					F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Attachment","View")
+				F.Intrinsic.Control.EndIf
+				'Close Attachment DT
+				F.Data.DataView.Close("dtAttach","dvAttach")
+				
+				'Calculate estimated number of days since email was created using # of attempts and retry intervals
+				'This is a complete best guess based on the currently available information
+				F.Intrinsic.Control.CallSub(calculate_Time,"iAttempt",V.DataTable.dtFailed(V.Local.iCount).Attempt!FieldValTrim)
+				F.Data.DataTable.SetValue("dtFailed",V.Local.iCount,"Age",V.Args.iDays)
+				
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.Next(V.Local.iCount)
+		
+		'Create Failed GV off of Failed DT
+		gui.dashboard.GsGCFailed.AddGridViewFromDataTable("gvFailed","dtFailed")
+		
+		'Format Failed GSGC
+		F.Intrinsic.Control.CallSub(format_GsGCFailed)
+		
+		'Set Failed GV as MainView of Failed GSGC		
+		gui.dashboard.GsGCFailed.MainView("gvFailed")
+				
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.Load_FailedItems.End
+Program.Sub.Refresh.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+		F.Intrinsic.Control.If(V.Global.bLoadData)
+			F.Intrinsic.Control.CallSub(Serialize)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.BlockEvents
+		Gui.dashboard.lblStatus.Visible(True)
+		Gui.dashboard.pbStatus.Visible(True)
+		gui.dashboard..Enabled(False)
+		F.Intrinsic.Control.CallSub(load_sentitems)
+		F.Intrinsic.Control.CallSub(load_pendingitems)
+		F.Intrinsic.Control.CallSub(load_faileditems)
+		
+
+		Gui.dashboard.lblStatus.Visible(False)
+		Gui.dashboard.pbStatus.Visible(False)
+		F.Intrinsic.Control.UnBlockEvents
+		F.Intrinsic.Control.CallSub(deserialize)
+		Function.Intrinsic.Control.CallSub(load_options)
+		Function.Intrinsic.Control.CallSub(get_courier_proctime)
+		Function.Intrinsic.Control.CallSub(get_courier_status)
+		
+		V.Global.bLoadData.Set(True)
+		
+		gui.dashboard..Enabled(True)
+		gui.dashboard..AlwaysOnTop(True)
+		gui.dashboard..AlwaysOnTop(False)
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.Refresh.End
+
+Program.Sub.Queue.Start
+V.Local.sSQLUpd.Declare
+V.Local.iCount.Declare
+
+		'F.Intrinsic.UI.Msgbox("Emails with scheduled deferred delivery will remain unchanged.","Deferred Delivery")
+		'Loop through DT
+		F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtFailed.RowCount--,1)
+			F.Intrinsic.Control.If(V.DataTable.dtFailed(V.Local.iCount).Queue!FieldValTrim)
+				'Schedule next delivery attempt funor now so long as the email is not scheduled for a later delivery i.e. Invoice Consolidation
+				F.Intrinsic.String.Build("UPDATE COURIER_EMAILBODY SET NEXTDELIVERYATTEMPT = now(), ERROR = '' WHERE EID = '{0}' AND (DEFERREDDELIVERY <= now() OR DEFERREDDELIVERY IS NULL)",V.DataTable.dtFailed(V.Local.iCount).EID!FieldValTrim,V.Local.sSQLUpd)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLUpd)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCount)
+'F.Intrinsic.UI.Msgbox("All failed emails queued to send at next Courier process (up to 5 min)","Success")
+F.Intrinsic.Control.CallSub(refresh)
+
+Program.Sub.Queue.End
+
+Program.Sub.DeleteEmails.Start
+V.Local.sSQLDel.Declare
+V.Local.iCount.Declare(Long,0)
+
+'if Tab 0 (Sent)
+F.Intrinsic.Control.If(V.Screen.dashboard!tabCourier.Tab,=,0)
+	'cycle through grid view
+	F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtSent.RowCount--,1)
+		'if marked for deletion, delete from COURIER_EMAILHIST, COURIER_EMLHISTATT, COURIER_EMLHISTBODY
+		F.Intrinsic.Control.If(V.DataTable.dtSent(V.Local.iCount).Delete!FieldValTrim,=,True)
+			F.Intrinsic.String.Build("DELETE FROM COURIER_EMAILHIST WHERE EHID = {0};",V.DataTable.dtSent(V.Local.iCount).EHID!FieldValTrim,V.Local.sSQLDel)
+			F.Intrinsic.String.Build("{0} DELETE FROM COURIER_EMLHISTATT WHERE EHID = {1};",V.Local.sSQLDel,V.DataTable.dtSent(V.Local.iCount).EHID!FieldValTrim,V.Local.sSQLDel)
+			F.Intrinsic.String.Build("{0} DELETE FROM COURIER_EMLHISTBODY WHERE EHID = {1};",V.Local.sSQLDel,V.DataTable.dtSent(V.Local.iCount).EHID!FieldValTrim,V.Local.sSQLDel)
+			F.ODBC.Connection!con.Execute(v.Local.sSQLDel)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.CallSub(refresh)
+'if Tab 1 (Pending)
+F.Intrinsic.Control.ElseIf(V.Screen.dashboard!tabCourier.Tab,=,1)
+	'cycle through grid view
+	F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtPending.RowCount--,1)
+		'if marked for deletion, delete from COURIER_EMAILBODY, COURIER_EMAILATTACH
+		F.Intrinsic.Control.If(V.DataTable.dtPending(V.Local.iCount).Delete!FieldValTrim,=,True)
+			F.Intrinsic.String.Build("DELETE FROM COURIER_EMAILBODY WHERE EID = {0};",V.DataTable.dtPending(V.Local.iCount).EID!FieldValTrim,V.Local.sSQLDel)
+			F.Intrinsic.String.Build("{0} DELETE FROM COURIER_EMAILATTACH WHERE EHID = {1};",V.Local.sSQLDel,V.DataTable.dtPending(V.Local.iCount).EID!FieldValTrim,V.Local.sSQLDel)
+			F.ODBC.Connection!con.Execute(v.Local.sSQLDel)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.CallSub(refresh)
+'if Tab 2 (Failed)
+F.Intrinsic.Control.ElseIf(V.Screen.dashboard!tabCourier.Tab,=,2)
+	'cycle through grid view
+	F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.dtFailed.RowCount--,1)
+		'if marked for deletion, delete from COURIER_EMAILBODY, COURIER_EMAILATTACH
+		F.Intrinsic.Control.If(V.DataTable.dtFailed(V.Local.iCount).Delete!FieldValTrim,=,True)
+			F.Intrinsic.String.Build("DELETE FROM COURIER_EMAILBODY WHERE EID = {0};",V.DataTable.dtFailed(V.Local.iCount).EID!FieldValTrim,V.Local.sSQLDel)
+			F.Intrinsic.String.Build("{0} DELETE FROM COURIER_EMAILATTACH WHERE EHID = {1};",V.Local.sSQLDel,V.DataTable.dtFailed(V.Local.iCount).EID!FieldValTrim,V.Local.sSQLDel)
+			F.ODBC.Connection!con.Execute(v.Local.sSQLDel)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.CallSub(refresh)
+F.Intrinsic.Control.EndIf 
+Program.Sub.DeleteEmails.End
+
+Program.Sub.cmdTest_Click.Start
+Gui.TestEmail..Show
+Program.Sub.cmdTest_Click.End
+
+Program.Sub.TestEmail_UnLoad.Start
+Gui.TestEmail..Visible(false)
+Program.Sub.TestEmail_UnLoad.End
+
+Program.Sub.cmdSend_Click.Start
+V.Local.sSender.Declare
+V.Local.sRecipient.Declare
+V.Local.bAttach.Declare
+V.Local.sAttach.Declare
+V.Local.sSubject.Declare
+V.Local.sBody.Declare
+V.Local.iUserID.Declare
+V.Local.sFileName.Declare
+V.Local.sFile.Declare
+
+V.Local.sSender.Set(V.Screen.TestEmail!txtSender.Text)
+V.Local.sRecipient.Set(V.Screen.TestEmail!txtRec.Text)
+V.Local.bAttach.Set(V.Screen.TestEmail!chkAttach.Value)
+F.Global.Security.GetUserID(V.Caller.User,V.Caller.CompanyCode,V.Local.iUserID)
+V.Local.sSubject.Set("Successful Test Email")
+V.Local.sBody.Set("Courier Test Email")
+F.Intrinsic.Control.If(V.Screen.TestEmail!chkAttach.Value,=,1)
+	F.Intrinsic.String.Concat(V.Caller.LocalGSSTempDir,"\TestAttachment.txt",V.Local.sFileName)
+	F.Intrinsic.String.Concat("TestAttachment.txt*!*",V.Caller.LocalGSSTempDir,"\",V.Local.sFile)
+	F.Intrinsic.File.String2File(V.Local.sFileName,"Courier Test Attachment")
+	F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUserID,"",V.Local.sSubject,V.Local.sSender,V.Local.sRecipient,V.Local.sBody,"","",False,"","","","","","","",V.Local.sFile,False)
+F.Intrinsic.Control.Else	
+	F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUserID,"",V.Local.sSubject,V.Local.sSender,V.Local.sRecipient,V.Local.sBody)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(refresh)
+Gui.dashboard.tabCourier.SetTab(1)
+
+F.Intrinsic.Control.CallSub(testemail_unload)
+
+Program.Sub.cmdSend_Click.End
+
+Program.Sub.Courier_Early_Process.Start
+V.Local.sSQL.Declare
+V.Local.sParams.Declare
+V.Local.iMonth.Declare
+V.Local.sMonth.Declare
+V.Local.iDay.Declare
+V.Local.sDay.Declare
+V.Local.iYear.Declare
+V.Local.sYear.Declare
+V.Local.iHour.Declare
+V.Local.sHour.Declare
+V.Local.iMinute.Declare
+V.Local.sMinute.Declare
+V.Local.iSecond.Declare
+V.Local.sSecond.Declare
+V.Local.sCmd.Declare
+V.Local.sFileName.Declare
+V.Local.sSQ2.Declare
+V.Local.bExists.Declare
+V.Local.bC2Exists.Declare
+V.Local.bC3Exists.Declare
+V.Local.sStartDate.Declare
+V.Local.sStartTime.Declare
+V.Local.sHookID.Declare
+V.Local.bRestarted.Declare
+V.Local.sOLUFile.Declare
+V.Local.sMsg.Declare
+V.Local.sC2File.Declare
+V.Local.sC3File.Declare
+
+
+F.Intrinsic.String.Build("{0}\COURIER2",V.Caller.TempDir,V.Local.sC2File)
+F.Intrinsic.String.Build("{0}\COURIER3",V.Caller.TempDir,V.Local.sC3File)
+
+'Batch file or command line to call kill task and relaunch Courier from server.
+F.Intrinsic.Control.If(V.Caller.Caller,=,"TSCH02","OR",V.Caller.Caller,=,"TSCH01",V.Caller.Caller,=,"")
+	F.Intrinsic.File.Exists(V.Local.sC2File,V.Local.bC2Exists)
+	F.Intrinsic.File.Exists(V.Local.sC3File,V.Local.bC3Exists)
+	F.Intrinsic.Control.If(V.Global.iMode,=,1)
+		F.Intrinsic.Control.If(V.Local.bC2Exists)
+			F.Intrinsic.String.Build("taskkill /f /im Courier2.exe{0}start "" {1}\Courier2.exe",V.Ambient.NewLine,V.Caller.PluginsDir,V.Local.sCmd)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Global.iMode,=,2)
+		F.Intrinsic.Control.If(V.Local.bC3Exists)
+			F.Intrinsic.String.Build("taskkill /f /im GSSCourier.exe{0}net start GSSCourier",V.Ambient.NewLine,V.Local.sCmd)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("{0}\COURIER.bat",V.Caller.PluginsDir,V.Local.sFileName)
+	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sCmd)
+	F.Intrinsic.Task.ShellExec(V.Caller.Handle,"open",V.Local.sFileName,"","",0)
+	F.Intrinsic.Control.CallSub(dashboard_Unload)
+F.Intrinsic.Control.EndIf
+ 
+'Check to see if Online Update is running
+Function.Intrinsic.String.Build("{0}\JB032AEX{1}",V.Caller.FilesDir,V.Caller.CompanyCode,V.Local.sOLUFile)
+Function.Intrinsic.File.Exists(V.Local.sOLUFile,V.Local.bExists)
+Function.Intrinsic.Control.If(V.Local.bExists,=,False)
+	Function.Intrinsic.UI.Msgbox("Online Update is not running. Courier cannot be restarted remotely.","Online Update Required")
+	Function.Intrinsic.Control.ExitSub
+Function.Intrinsic.Control.EndIf
+
+'Parse and format datetime information
+F.Intrinsic.Date.Month(V.Ambient.Date,V.Local.iMonth)
+F.Intrinsic.String.ConvertToString(V.Local.iMonth,V.Local.sMonth)
+F.Intrinsic.String.LPad(V.Local.sMonth,"0",2,V.Local.sMonth)
+F.Intrinsic.Date.Day(V.Ambient.Date,V.Local.iDay)
+F.Intrinsic.String.ConvertToString(V.Local.iDay,V.Local.sDay)
+F.Intrinsic.String.LPad(V.Local.sDay,"0",2,V.Local.sDay)
+F.Intrinsic.Date.Year(V.Ambient.Date,V.Local.iYear)
+F.Intrinsic.String.ConvertToString(V.Local.iYear,V.Local.sYear)
+F.Intrinsic.Date.Hour(V.Ambient.Time,V.Local.iHour)
+F.Intrinsic.String.ConvertToString(V.Local.iHour,V.Local.sHour)
+F.Intrinsic.String.LPad(V.Local.sHour,"0",2,V.Local.sHour)
+F.Intrinsic.Date.Minute(V.Ambient.Time,V.Local.iMinute)
+F.Intrinsic.String.ConvertToString(V.Local.iMinute,V.Local.sMinute)
+F.Intrinsic.String.LPad(V.Local.sMinute,"0",2,V.Local.sMinute)
+F.Intrinsic.Date.Second(V.Ambient.Time,V.Local.iSecond)
+F.Intrinsic.String.ConvertToString(V.Local.iSecond,V.Local.sSecond)
+F.Intrinsic.String.RPad(V.Local.sSecond,"0",4,V.Local.sSecond)
+
+'Present message
+Function.Intrinsic.String.Build("Queueing Courier to restart. This may take a few minutes.{0}A message will alert you when it has been restarted.{0}{0}If longer than 5 minutes, please try again.",V.Ambient.NewLine,V.Local.sMsg)
+Function.Intrinsic.UI.Msgbox(V.Local.sMsg, "Restarting Courier")
+
+
+F.Intrinsic.Control.If(V.Global.iMode,=,1)
+	F.Intrinsic.File.Exists(V.Local.sC2File,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,False)
+		F.Intrinsic.File.String2File(V.Local.sC2File,"Courier2")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Global.iMode,=,2)
+	F.Intrinsic.File.Exists(V.Local.sC3File,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,False)
+		F.Intrinsic.File.String2File(V.Local.sC3File,"Courier3")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Retrieve GAB hook information
+V.Local.sSQL.Set("select ID from HOOK_ASSOCIATION where SCRIPT_NAME like 'GAB_5095_Courier_Console.g2u'")
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sHookID)
+F.Intrinsic.String.Right(V.Local.sHookID,7,V.Local.sHookID)
+
+'Check to see if the Relaunch Courier task already exists in task scheduler
+V.Local.sSQ2.Set("SELECT SCHED_ID FROM TASK_SCHEDULER WHERE DESCR LIKE 'Relaunch Courier'")
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstID",V.Local.sSQ2)
+
+'If Task does not exist in Task Scheduler
+Function.Intrinsic.Control.If(V.ODBC.conx!rstID.EOF,=,True)
+	'Callwrapper to add record to Task Scheduler
+	F.Intrinsic.String.Build("SA!*!!*!{0}!*!O!*!G!*!Relaunch Courier!*!Y!*!{1}!*!{2}!*!{3}!*!{4}!*!{5}!*!{6}",V.Local.sHookID,V.Local.iYear,V.Local.iMonth,V.Local.iDay,V.Local.iHour,V.Local.iMinute,V.Local.iSecond,V.Local.sParams)
+	F.Global.General.CallWrapperAsync(800000,V.Local.sParams)
+'Else Task already exists in Task Scheduler	
+Function.Intrinsic.Control.Else 
+	'Update the existing Task Scheduler record to run as soon as possible
+	F.Intrinsic.String.Concat(V.Local.sYear,V.Local.sMonth,V.Local.sDay,V.Local.sStartDate)
+	F.Intrinsic.String.Concat(V.Local.sHour,V.Local.sMinute,V.Local.sSecond,V.Local.sStartTime)
+	F.Intrinsic.String.Build("UPDATE TASK_SCHEDULER SET ACTIVE_FLAG = 'Y',START_DATE = {0},START_TIME = {1} WHERE SCHED_ID = {2}",V.Local.sStartDate,V.Local.sStartTime,V.ODBC.conx!rstID.FieldValTrim!SCHED_ID,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+Function.Intrinsic.Control.EndIf
+
+'Continue to check for when the task scheduler has closed Courier and relaunched
+V.Local.bRestarted.Set(False)
+
+F.Intrinsic.Control.DoUntil(V.Local.bRestarted,=,True)
+	F.Intrinsic.String.Build("SELECT ACTIVE_FLAG FROM TASK_SCHEDULER WHERE JOBSTREAM = '{0}'",V.Local.sHookID,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstActive",V.Local.sSQL)
+	f.Intrinsic.Control.If(V.ODBC.conx!rstActive.EOF,<>,True)
+		Function.Intrinsic.Control.If(V.ODBC.conx!rstActive.FieldValTrim!ACTIVE_FLAG,=,"N")
+			V.Local.bRestarted.Set(True)
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstActive.Close
+F.Intrinsic.Control.Loop
+
+Function.Intrinsic.UI.Sleep(15)
+
+'Present message
+Function.Intrinsic.UI.Msgbox("Courier has been restarted.","Restarting Courier")
+
+V.Local.sSQL.Set("DELETE FROM TASK_SCHEDULER WHERE DESCR = 'Relaunch Courier'")
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.File.Exists(V.Local.sC2File,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+		F.Intrinsic.File.DeleteFile(V.Local.sC2File)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.File.Exists(V.Local.sC3File,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+		F.Intrinsic.File.DeleteFile(V.Local.sC3File)
+F.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.CallSub(refresh)
+    
+Program.Sub.Courier_Early_Process.End
+
+Program.Sub.Courier3_Early_Process.Start
+Program.Sub.Courier3_Early_Process.End
+Program.Sub.Load_Options.Start
+'Subroutine to load all options to screen
+Gui.dashboard.lblStatus.Caption("Loading Options")
+Gui.dashboard.pbStatus.Min(0)
+Gui.dashboard.pbStatus.Max(100)
+
+'Courier mode
+F.Intrinsic.Control.If(V.Global.bCourier)
+	Gui.dashboard.optCourier2.Value(0)
+	Gui.dashboard.optCourier3.Value(1)
+F.Intrinsic.Control.Else
+	Gui.dashboard.optCourier2.Value(1)
+	Gui.dashboard.optCourier3.Value(0)
+F.Intrinsic.Control.EndIf
+
+'History On/Off
+Function.Global.General.ReadOptionCommon(3170,0,0,0,0,V.Global.bLogging)
+Gui.dashboard.chkLogging.Value(V.Global.bLogging)
+
+'History Value
+F.Intrinsic.Control.If(V.Global.bLogging,=,False)
+	Gui.dashboard.txtHist.Enabled(False)
+	Gui.dashboard.lblHist.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Global.bIsAdmin,=,True)
+	Gui.dashboard.txtHist.Enabled(True)
+	Gui.dashboard.lblHist.Enabled(True)
+F.Intrinsic.Control.EndIf
+F.Global.General.ReadOptionCommon(3180,0,0,3,0,V.Global.iHist)
+Gui.dashboard.txtHist.Text(V.Global.iHist)
+Gui.dashboard.pbStatus.Value(10)
+
+'SMTP Server
+Function.Global.General.ReadOptionCommon(3000,0,0,1,"0.0.0.0",V.Global.sOptIP)
+Gui.dashboard.txtSvr.Text(V.Global.sOptIP)
+
+'SMTP Port
+Function.Global.General.ReadOptionCommon(3010,0,0,3,0,V.Global.iOptPort)
+Gui.dashboard.txtPort.Text(V.Global.iOptPort)
+
+'SMTP Authentication On/Off
+Function.Global.General.ReadOptionCommon(3020,0,0,0,0,V.Global.bAuth)
+Gui.dashboard.chkAuthentication.Value(V.Global.bAuth)
+F.Intrinsic.Control.If(V.Global.bAuth,=,False)
+	Gui.dashboard.txtSMTPUser.Enabled(False)
+	Gui.dashboard.lblSMTPUser.Enabled(False)
+	Gui.dashboard.txtSMTPPass.Enabled(False)
+	Gui.dashboard.lblSMTPPass.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Global.bIsAdmin,=,True)
+	Gui.dashboard.txtSMTPUser.Enabled(True)
+	Gui.dashboard.lblSMTPUser.Enabled(True)
+	Gui.dashboard.txtSMTPPass.Enabled(True)
+	Gui.dashboard.lblSMTPPass.Enabled(True)
+F.Intrinsic.Control.EndIf
+Gui.dashboard.pbStatus.Value(40)
+
+'SMTP User
+Function.Global.General.ReadOptionCommon(3030,0,0,1,"Not used",V.Global.sSMTPUser)
+Gui.dashboard.txtSMTPUser.Text(V.Global.sSMTPUser)
+
+'SMTP Password
+Function.Global.General.ReadOptionCommon(3040,0,0,1,"Unknown",V.Global.sSMTPPass)
+Gui.dashboard.txtSMTPPass.Text(V.Global.sSMTPPass)
+
+'Debug On/Off
+Function.Global.General.ReadOptionCommon(3320,0,0,0,0,V.Global.bDebug)
+Gui.dashboard.chkDebug.Value(V.Global.bDebug)
+
+'BCC to Sender On/Off
+Function.Global.General.ReadOptionCommon(3130,0,0,0,0,V.Global.bBCC)
+Gui.dashboard.chkBCC.Value(V.Global.bBCC)
+Gui.dashboard.pbStatus.Value(60)
+
+'Read Receipt On/Off
+Function.Global.General.ReadOptionCommon(3140,0,0,0,0,V.Global.bReadRcpt)
+Gui.dashboard.chkReadReceipt.Value(V.Global.bReadRcpt)
+
+'Courier Interval
+Function.Global.General.ReadOptionCommon(3120,0,0,3,0,V.Global.iProcInterval)
+Gui.dashboard.txtProcInterval.Text(V.Global.iProcInterval)
+
+'2nd Attempt
+Function.Global.General.ReadOptionCommon(3330,0,0,3,0,V.Global.iSecond)
+Gui.dashboard.txt2nd.Text(V.Global.iSecond)
+Gui.dashboard.pbStatus.Value(80)
+
+'3rd Attempt
+Function.Global.General.ReadOptionCommon(3340,0,0,3,0,V.Global.iThird)
+Gui.dashboard.txt3rd.Text(V.Global.iThird)
+
+'4th+ Attempt
+Function.Global.General.ReadOptionCommon(3350,0,0,3,0,V.Global.iFourth)
+Gui.dashboard.txt4th.Text(V.Global.iFourth)
+
+
+
+Program.Sub.Load_Options.End
+
+Program.Sub.Get_Courier_Log.Start
+V.Local.sCFile.Declare
+V.Local.sCFileList.Declare
+V.Local.iCnt.Declare
+V.Local.dTemp1.Declare(Date)
+V.Local.dTemp2.Declare(Date)
+V.Local.dTemp3.Declare(Date)
+V.Local.sFile.Declare
+
+F.Intrinsic.Control.If(V.Global.iMode,=,1)
+	'Get list of Courier trace files from Plugins and save to array sCFileList
+	Function.Intrinsic.String.Build("{0}\Courier*.trc",V.Caller.PluginsDir,V.Local.sCFile)
+	Function.Intrinsic.File.GetFileList(V.Local.sCFile,V.Local.sCFileList)
+	Function.Intrinsic.String.Split(V.Local.sCFileList,":",V.Local.sCFileList)
+	
+	'Check if any Courier log files exist before continuing
+	F.Intrinsic.Control.If(V.Local.sCFileList.Length,>,0)
+		'Loop through Courier trace files, comparing timestamps, to find the most recent log file and return
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sCFileList.UBound,1)
+			Function.Intrinsic.String.Build("{0}\{1}",V.Caller.PluginsDir,V.Local.sCFileList(V.Local.iCnt),V.Local.sFile)
+			Function.Intrinsic.File.GetFileDateTime(V.Local.sFile,V.Local.dTemp2)
+			Function.Intrinsic.Control.If(V.Local.dTemp2,>,V.Local.dTemp1)
+				V.Global.sFileRet.Set(V.Local.sFile)
+				V.Local.dTemp3.Set(V.Local.dTemp2)
+				V.Local.dTemp1.Set(V.Local.dTemp3)
+			Function.Intrinsic.Control.EndIf
+		Function.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.Else
+		Function.Intrinsic.UI.Msgbox("Courier logs not found or tracing not enabled. Some functionality may not be available.")		
+	f.Intrinsic.Control.Endif
+F.Intrinsic.Control.ElseIf(V.Global.iMode,=,2)
+	'Get list of Courier trace files from Temp and save to array sCFileList
+	Function.Intrinsic.String.Build("{0}\Courier\Courier*.txt",V.Caller.TempDir,V.Local.sCFile)
+	Function.Intrinsic.File.GetFileList(V.Local.sCFile,V.Local.sCFileList)
+	Function.Intrinsic.String.Split(V.Local.sCFileList,":",V.Local.sCFileList)
+	
+	'Check if any Courier log files exist before continuing
+	F.Intrinsic.Control.If(V.Local.sCFileList.Length,>,0)
+		'Loop through Courier trace files, comparing timestamps, to find the most recent log file and return
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sCFileList.UBound,1)
+			Function.Intrinsic.String.Build("{0}\Courier\{1}",V.Caller.TempDir,V.Local.sCFileList(V.Local.iCnt),V.Local.sFile)
+			Function.Intrinsic.File.GetFileDateTime(V.Local.sFile,V.Local.dTemp2)
+			Function.Intrinsic.Control.If(V.Local.dTemp2,>,V.Local.dTemp1)
+				V.Global.sFileRet.Set(V.Local.sFile)
+				V.Local.dTemp3.Set(V.Local.dTemp2)
+				V.Local.dTemp1.Set(V.Local.dTemp3)
+			Function.Intrinsic.Control.EndIf
+		Function.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.Else
+		Function.Intrinsic.UI.Msgbox("Courier logs not found or tracing not enabled. Some functionality may not be available.")		
+	f.Intrinsic.Control.Endif
+F.Intrinsic.Control.EndIf
+
+	
+Program.Sub.Get_Courier_Log.End
+
+Program.Sub.Get_Courier_ProcTime.Start
+V.Local.sLog.Declare
+V.Local.iCnt.Declare
+V.Local.bRet.Declare
+V.Local.sLogRec.Declare
+V.Local.bLock.Declare
+V.Local.sTemp.Declare
+V.Local.sMonth.Declare
+V.Local.sDay.Declare
+V.Local.sYear.Declare
+
+Function.Intrinsic.Control.CallSub(get_courier_log)
+
+F.Intrinsic.Control.If(V.Global.sFileRet,<>, "")
+	F.Intrinsic.File.IsFileLocked(V.Global.sFileRet,V.Local.bLock)
+	F.Intrinsic.Control.If(V.Local.bLock,=,False)
+		Function.Intrinsic.File.File2String(V.Global.sFileRet,V.Local.sLog)
+		Function.Intrinsic.String.Split(V.Local.sLog,V.Ambient.NewLine,V.Local.sLog)
+		F.Intrinsic.Control.If(V.Global.iMode,=,1)
+			F.Intrinsic.Control.For(V.Local.iCnt,V.Local.sLog.UBound,0,-1)
+				Function.Intrinsic.String.IsInString(V.Local.sLog(V.Local.iCnt),"Get emails",False,V.Local.bRet)
+				Function.Intrinsic.Control.If(V.Local.bRet,=,True)
+					Function.Intrinsic.String.Split(V.Local.sLog(V.Local.iCnt)," (",V.Local.sLogRec)
+					V.Global.sCProcTime.Set(V.Local.sLogRec(0))
+					Gui.dashboard.lblProcTime.Text(V.Global.sCProcTime)
+					F.Intrinsic.Control.CallSub(get_Courier_status)
+					Function.Intrinsic.Control.ExitSub
+				Function.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.iCnt)
+		F.Intrinsic.Control.ElseIf(V.Global.iMode,=,2)
+			F.Intrinsic.Math.Sub(V.Local.sLog.UBound,1,V.Local.iCnt)
+			F.Intrinsic.String.Mid(V.Local.sLog(V.Local.iCnt),2,11,V.Global.sCProcTime)
+			F.Intrinsic.String.Split(V.Global.sFileRet,"\",V.Local.sTemp)
+			F.Intrinsic.String.Mid(V.Local.sTemp(V.Local.sTemp.Ubound),8,4,V.Local.sYear)
+			F.Intrinsic.String.Mid(V.Local.sTemp(V.Local.sTemp.Ubound),12,2,V.Local.sMonth)
+			F.Intrinsic.String.Mid(V.Local.sTemp(V.Local.sTemp.Ubound),14,2,V.Local.sDay)
+			F.Intrinsic.String.Build("{0}/{1}/{2}  {3}", V.Local.sMonth,V.Local.sDay,V.Local.sYear,V.Global.sCProcTime,V.Global.sCProcTime)
+			Gui.dashboard.lblProcTime.Text(V.Global.sCProcTime)
+			F.Intrinsic.Control.CallSub(get_Courier_Status)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Else
+		Gui.dashboard.lblProcTime.Text("Time not found")
+	f.Intrinsic.Control.Endif
+F.Intrinsic.Control.Else
+	Gui.dashboard.lblProcTime.Text("Time not found")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Get_Courier_ProcTime.End
+
+Program.Sub.SaveOptionstoDB.Start
+V.Local.iProcInterval.Declare
+
+'Function.Intrinsic.UI.InvokeWaitDialog("Please wait...","Saving configuration")
+Function.Global.General.SaveOptionCommon(3000,0,0,1,V.Screen.dashboard!txtSvr.Text)
+Function.Global.General.SaveOptionCommon(3010,0,0,3,V.Screen.dashboard!txtPort.Text)
+Function.Global.General.SaveOptionCommon(3170,0,0,0,V.Screen.dashboard!chkLogging.Value)
+Function.Global.General.SaveOptionCommon(3320,0,0,0,V.Screen.dashboard!chkDebug.Value)
+Function.Global.General.SaveOptionCommon(3020,0,0,0,V.Screen.dashboard!chkAuthentication.Value)
+Function.Global.General.SaveOptionCommon(3030,0,0,1,V.Screen.dashboard!txtSMTPUser.Text)
+Function.Global.General.SaveOptionCommon(3040,0,0,1,V.Screen.dashboard!txtSMTPPass.Text)
+Function.Global.General.SaveOptionCommon(3330,0,0,3,V.Screen.dashboard!txt2nd.Text)
+Function.Global.General.SaveOptionCommon(3340,0,0,3,V.Screen.dashboard!txt3rd.Text)
+Function.Global.General.SaveOptionCommon(3350,0,0,3,V.Screen.dashboard!txt4th.Text)
+Function.Global.General.SaveOptionCommon(3130,0,0,0,V.Screen.dashboard!chkBCC.Value)
+Function.Global.General.SaveOptionCommon(3140,0,0,0,V.Screen.dashboard!chkReadReceipt.Value)
+F.Intrinsic.Math.ConvertToLong(V.Screen.dashboard!txtProcInterval.Text,V.Local.iProcInterval)
+F.Intrinsic.Control.If(V.Local.iProcInterval,>=,5)
+	Function.Global.General.SaveOptionCommon(3120,0,0,3,V.Screen.dashboard!txtProcInterval.Text)
+F.Intrinsic.Control.Else
+	Gui.dashboard.txtProcInterval.Text("5")
+	Function.Global.General.SaveOptionCommon(3120,0,0,3,V.Screen.dashboard!txtProcInterval.Text)
+F.Intrinsic.Control.EndIf
+Function.Global.General.SaveOptionCommon(3180,0,0,3,V.Screen.dashboard!txtHist.Text)
+Function.Intrinsic.Control.CallSub(Load_Options)
+'Function.Intrinsic.UI.CloseWaitDialog
+
+Program.Sub.SaveOptionstoDB.End
+
+Program.Sub.Load_Inbox.Start
+V.Local.sSQL.Declare
+V.Local.iUserID.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtInbox.Exists)
+	F.Data.DataTable.Close("dtInbox")
+F.Intrinsic.Control.EndIf
+
+'Get user ID and email
+F.Global.Security.GetUserID(V.Caller.User,V.Caller.CompanyCode,V.Local.iUserID)
+
+Function.Intrinsic.String.Build("SELECT TIMESTAMP, TITLE, TEXT FROM MSG_MESSAGES WHERE MESSAGE_ID IN (SELECT MESSAGE_ID FROM MSG_QUEUE WHERE RECIPIENT = '{0}')",V.Local.iUserID,V.Local.sSQL)
+
+'Create datatable
+F.Data.DataTable.CreateFromSQL("dtInbox","con",V.Local.sSQL,True)
+
+gui.dashboard.GsGCInbox.AddGridViewFromDataTable("gvInbox","dtInbox")
+gui.dashboard.GsGCInbox.MainView("gvInbox")
+Program.Sub.Load_Inbox.End
+
+Program.Sub.get_courier_status.Start
+V.Local.sFile.Declare
+V.Local.bCourier2.Declare
+V.Local.bCourier3.Declare
+
+F.Intrinsic.Control.If(V.Global.iMode,=,1)
+	Function.Intrinsic.String.Build("{0}\Courier2.lck",V.Caller.PluginsDir,V.Local.sFile)
+	Function.Intrinsic.File.IsFileLocked(V.Local.sFile,V.Local.bCourier2)
+	Function.Intrinsic.Control.If(V.Local.bCourier2)
+		gui.dashboard.lblCourierStatusTxt.Text("RUNNING")
+		gui.dashboard.lblCourierStatusTxt.ForeColor(V.Color.Black)
+	Function.Intrinsic.Control.Else
+		gui.dashboard.lblCourierStatusTxt.Text("NOT RUNNING")
+		gui.dashboard.lblCourierStatusTxt.ForeColor(V.Color.Red)
+	Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Global.iMode,=,2)
+	Function.Intrinsic.String.Build("{0}\COURIERISRUNNING",V.Caller.TempDir,V.Local.sFile)
+	'F.Intrinsic.Task.IsProgramRunning("GSSCourier",V.Local.bCourier3)
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bCourier3)
+	F.Intrinsic.Control.If(V.Local.bCourier3)
+		gui.dashboard.lblCourierStatusTxt.Text("RUNNING")
+		gui.dashboard.lblCourierStatusTxt.ForeColor(V.Color.Black)
+	Function.Intrinsic.Control.Else
+		gui.dashboard.lblCourierStatusTxt.Text("NOT RUNNING")
+		gui.dashboard.lblCourierStatusTxt.ForeColor(V.Color.Red)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.bCourier2)
+	f.Intrinsic.Control.If(V.Local.bCourier3)
+		Gui.dashboard..Enabled(False)
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.get_courier_status.End
+
+Program.Sub.btnSave_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+		'If any records have delete checked, delete first
+		F.Intrinsic.Control.CallSub(DeleteEmails)	
+	
+		'F.Data.DataTable.RemoveColumn("dtFailed","Attachment")
+		F.Data.DataTable.RemoveColumn("dtFailed","Delete")
+		F.Data.DataTable.RemoveColumn("dtFailed","Queue")
+		F.Data.DataTable.RemoveColumn("dtFailed","Age")		
+		
+		'F.Data.DataTable.RemoveColumn("dtPending","Attachment")
+		F.Data.DataTable.RemoveColumn("dtPending","Delete")		
+		
+		gui.dashboard..Enabled(False)
+
+		F.Data.DataTable.SaveToDB("dtFailed","con","COURIER_EMAILBODY","EID")
+		
+		F.Intrinsic.Control.CallSub(Load_failedItems)
+		F.Data.DataTable.SaveToDB("dtPending","con","COURIER_EMAILBODY","EID")
+		F.Intrinsic.Control.CallSub(Load_pendingItems)
+		F.Intrinsic.Control.CallSub(Load_SentItems)
+		gui.dashboard..Enabled(True)
+		gui.dashboard..AlwaysOnTop(True)
+		gui.dashboard..AlwaysOnTop(False)
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+
+	F.Intrinsic.Control.EndTry
+Program.Sub.btnSave_Click.End
+
+Program.Sub.selectAll_Delete.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+		'if Tab 0 (Sent)
+		F.Intrinsic.Control.If(V.Screen.dashboard!tabCourier.Tab,=,0)
+			F.Data.DataTable.SetValue("dtSent",-1,"Delete",True)
+		'if Tab 1 (Pending)
+		F.Intrinsic.Control.ElseIf(V.Screen.dashboard!tabCourier.Tab,=,1)
+			F.Data.DataTable.SetValue("dtPending",-1,"Delete",True)
+		'if Tab 2 (Failed)
+		F.Intrinsic.Control.ElseIf(V.Screen.dashboard!tabCourier.Tab,=,2)
+			F.Data.DataTable.SetValue("dtFailed",-1,"Delete",True)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.selectAll_Delete.End
+
+Program.Sub.selectNone_Delete.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+			'if Tab 0 (Sent)
+		F.Intrinsic.Control.If(V.Screen.dashboard!tabCourier.Tab,=,0)
+			F.Data.DataTable.SetValue("dtSent",-1,"Delete",False)
+		'if Tab 1 (Pending)
+		F.Intrinsic.Control.ElseIf(V.Screen.dashboard!tabCourier.Tab,=,1)
+			F.Data.DataTable.SetValue("dtPending",-1,"Delete",False)
+		'if Tab 2 (Failed)
+		F.Intrinsic.Control.ElseIf(V.Screen.dashboard!tabCourier.Tab,=,2)
+			F.Data.DataTable.SetValue("dtFailed",-1,"Delete",False)
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.selectNone_Delete.End
+
+Program.Sub.selectAll_Queue.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+		F.Data.DataTable.SetValue("dtFailed",-1,"Queue",True)
+		
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.selectAll_Queue.End
+
+Program.Sub.selectNone_Queue.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+		F.Data.DataTable.SetValue("dtFailed",-1,"Queue",False)
+		
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.selectNone_Queue.End
+
+Program.Sub.btnCourier2_Click.Start
+V.Local.sCmd.Declare
+V.Local.sFileName.Declare
+
+'Batch file or command line to call kill task and relaunch Courier from server.
+F.Intrinsic.Control.If(V.Caller.Caller,=,"TSCH02","OR",V.Caller.Caller,=,"TSCH01")
+	F.Intrinsic.String.Build("taskkill /f /im Courier2.exe",V.Local.sCmd)
+	F.Intrinsic.String.Build("{0}\COURIER.bat",V.Caller.PluginsDir,V.Local.sFileName)
+	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sCmd)
+	F.Intrinsic.Task.ShellExec(V.Caller.Handle,"open",V.Local.sFileName,"","",0)
+	F.Intrinsic.File.DeleteFile(V.Local.sFileName)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Check to see if Online Update is running
+Function.Intrinsic.String.Build("{0}\JB032AEX{1}",V.Caller.FilesDir,V.Caller.CompanyCode,V.Local.sOLUFile)
+Function.Intrinsic.File.Exists(V.Local.sOLUFile,V.Local.bExists)
+Function.Intrinsic.Control.If(V.Local.bExists,=,False)
+	Function.Intrinsic.UI.Msgbox("Courier2 cannot be closed remotely while Online Update is not running. ","Online Update Required")
+	Function.Intrinsic.Control.ExitSub
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.btnCourier2_Click.End
+
+Program.Sub.btnCourier3_Click.Start
+V.Local.sCmd.Declare
+V.Local.sFileName.Declare
+
+'Batch file or command line to call kill task and relaunch Courier from server.
+F.Intrinsic.Control.If(V.Caller.Caller,=,"TSCH02","OR",V.Caller.Caller,=,"TSCH01")
+	F.Intrinsic.String.Build("taskkill /f /im GSSCourier.exe",V.Local.sCmd)
+	F.Intrinsic.String.Build("{0}\COURIER.bat",V.Caller.PluginsDir,V.Local.sFileName)
+	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sCmd)
+	F.Intrinsic.Task.ShellExec(V.Caller.Handle,"open",V.Local.sFileName,"","",0)
+	F.Intrinsic.File.DeleteFile(V.Local.sFileName)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Check to see if Online Update is running
+Function.Intrinsic.String.Build("{0}\JB032AEX{1}",V.Caller.FilesDir,V.Caller.CompanyCode,V.Local.sOLUFile)
+Function.Intrinsic.File.Exists(V.Local.sOLUFile,V.Local.bExists)
+Function.Intrinsic.Control.If(V.Local.bExists,=,False)
+	Function.Intrinsic.UI.Msgbox("Courier3 cannot be closed remotely while Online Update is not running. ","Online Update Required")
+	Function.Intrinsic.Control.ExitSub
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.btnCourier3_Click.End
+
+Program.Sub.optCourier2_Click.Start
+V.Global.iMode.Set(1)
+F.Global.General.SaveOptionCommon("5095",0,0,0,0)
+F.Intrinsic.Control.CallSub(Refresh)
+Program.Sub.optCourier2_Click.End
+
+Program.Sub.optCourier3_Click.Start
+V.Global.iMode.Set(2)
+F.Global.General.SaveOptionCommon("5095",0,0,0,1)
+F.Intrinsic.Control.CallSub(Refresh)
+Program.Sub.optCourier3_Click.End
+
+Program.Sub.setPermissions.Start
+	F.Intrinsic.Control.Try
+		V.Local.sError.Declare
+		
+		'Admin users need to be added to a Security Group specifically named EMCADMIN
+		'All other users will have certain functionality removed from their console
+		
+		'Check if user is part of the EMCADMIN group and restrict functions accordingly
+		F.Global.Security.IsInGroup(V.Caller.User,"EMCADMIN",V.Caller.CompanyCode,V.Global.bIsAdmin)
+		F.Intrinsic.Control.If(V.Global.bIsAdmin,=,False)
+			Gui.dashboard.chkAllUsers.Visible(False)
+			gui.dashboard.btnReQ.Visible(False)
+			gui.dashboard.btnDel.Visible(False)
+			Gui.dashboard.txtSvr.Enabled(False)
+			Gui.dashboard.txtPort.Enabled(False)
+			gui.dashboard.chkLogging.Enabled(False)
+			gui.dashboard.chkDebug.Enabled(False)
+			gui.dashboard.chkBCC.Enabled(False)
+			gui.dashboard.chkReadReceipt.Enabled(False)
+			gui.dashboard.chkAuthentication.Enabled(False)
+			gui.dashboard.txtSMTPUser.Enabled(False)
+			gui.dashboard.txtSMTPPass.Enabled(False)
+			gui.dashboard.txt2nd.Enabled(False)
+			gui.dashboard.txt3rd.Enabled(False)
+			gui.dashboard.txt4th.Enabled(False)
+			gui.dashboard.lblHist.Enabled(False)
+			gui.dashboard.txtHist.Enabled(False)
+			gui.dashboard.txtProcInterval.Enabled(False)
+		F.Intrinsic.Control.EndIf	
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.setPermissions.End
+
+Program.Sub.SetContextMenus.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+		Gui.dashboard..ContextMenuCreate("ctxMain")
+		Gui.dashboard.GsGcSent.ContextMenuAttach("ctxMain")
+		Gui.dashboard.GsGcPending.ContextMenuAttach("ctxMain")
+		Gui.dashboard..ContextMenuAddItem("ctxMain","DeleteAll",0,"Select All for Delete")
+		Gui.dashboard..ContextMenuAddItem("ctxMain","DeleteNone",0,"Deselect All for Delete")
+		Gui.dashboard..ContextMenuAddItem("ctxMain","Export",0,"Export")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxMain","DeleteAll","selectAll_Delete")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxMain","DeleteNone","selectNone_Delete")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxMain","Export","export")
+		
+		Gui.dashboard..ContextMenuCreate("ctxFailed")
+		Gui.dashboard.GsGcFailed.ContextMenuAttach("ctxFailed")
+		Gui.dashboard..ContextMenuAddItem("ctxFailed","DeleteAll",0,"Select All for Delete")
+		Gui.dashboard..ContextMenuAddItem("ctxFailed","QueueAll",0,"Select All for Queue")
+		Gui.dashboard..ContextMenuAddItem("ctxFailed","DeleteNone",0,"Deselect All for Delete")
+		Gui.dashboard..ContextMenuAddItem("ctxFailed","QueueNone",0,"Deselect All for Queue")
+		Gui.dashboard..ContextMenuAddItem("ctxFailed","Export",0,"Export")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxFailed","DeleteAll","selectAll_Delete")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxFailed","QueueAll","selectAll_Queue")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxFailed","DeleteNone","selectNone_Delete")
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxFailed","QueueNone","selectNone_Queue")		
+		Gui.dashboard..ContextMenuSetItemEventHandler("ctxFailed","Export","export")
+
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.calculate_Time.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+		V.Local.iDays.Declare(Long, 0)
+		V.Local.iMinutes.Declare(Long, 0)
+		V.Local.iSecond.Declare(Long, 0)
+		V.Local.iThird.Declare(Long, 0)
+		V.Local.iFourth.Declare(Long, 0)
+		V.Local.iTmp.Declare
+
+		F.Intrinsic.Control.If(V.Args.iAttempt,=,2)
+			'2nd Attempt
+			V.Local.iSecond.Set(V.Global.iSecond)
+		F.Intrinsic.Control.ElseIf(V.Args.iAttempt,=,3)
+			'3rd Attempt
+			V.Local.iSecond.Set(V.Global.iSecond)
+			V.Local.iThird.Set(V.Global.iThird)
+		F.Intrinsic.Control.ElseIf(V.Args.iAttempt,>,3)
+			'4th Attempt
+			V.Local.iSecond.Set(V.Global.iSecond)
+			V.Local.iThird.Set(V.Global.iThird)
+			F.Intrinsic.Math.Sub(V.Args.iAttempt,2,V.Local.iTmp)
+			F.Intrinsic.Math.Mult(V.Local.iTmp,V.Global.iFourth,V.Local.iFourth)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Math.Add(V.Local.iSecond,V.Local.iThird,V.Local.iFourth,V.Local.iMinutes)
+		F.Intrinsic.Control.If(V.Local.iMinutes,<,1441)
+			V.Local.iDays.Set(0)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Div(V.Local.iMinutes,1440,V.Local.iDays)
+			F.Intrinsic.Math.Sub(V.Local.iDays,1,V.Local.iDays)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Variable.AddRV("iDays",V.Local.iDays)
+
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+
+Program.Sub.calculate_Time.End
+
+Program.Sub.format_GsGCPending.Start
+'Format GridControl
+gui.dashboard.GsGCPending.SetGridviewProperty("gvPending","EnableAppearanceEvenRow",True)
+gui.dashboard.GsGCPending.SetGridViewProperty("gvPending","MultiSelect",True)
+gui.dashboard.GsGCPending.SetGridViewProperty("gvPending","AllowFilter",True)
+gui.dashboard.GsGCPending.SetGridviewProperty("gvPending","Editable", True)
+gui.dashboard.GsGCPending.SetGridviewProperty("gvPending","ReadOnly", False)
+gui.dashboard.GsGCPending.SetGridviewProperty("gvPending","OptionsViewColumnAutoWidth",True)
+gui.dashboard.GsGCPending.BestFitColumns("gvPending")
+
+'Visible
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","REPLYTOADDRESS","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","MODE","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDERNAME","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","RECIPIENTNAME","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERRORDT","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERROR","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ADDITIONALHEADERS","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","EXCLUDEFROMHIST","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","DONOTALLOWRESEND","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","META0","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","META1","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","META2","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","META3","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","META4","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","BODY","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","DEFERREDDELIVERY","Visible",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","EID","Visible",False)
+
+'MaxWidth
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","EID","MaxWidth","30")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","COCODE","MaxWidth","55")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","USERID","MaxWidth","45")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDERNAME","MaxWidth","80")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ATTEMPT","MaxWidth","60")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","NEXTDELIVERYATTEMPT","MaxWidth","150")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","Delete","MaxWidth","45")
+
+'MinWidth
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","EID","MinWidth","30")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","NEXTDELIVERYATTEMPT","MinWidth","140")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERROR","MinWidth","180")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","COCODE","MinWidth","55")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","USERID","MinWidth","45")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDERNAME","MinWidth","120")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDEREMAIL","MinWidth","180")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","RECIPIENTNAME","MinWidth","120")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","RECIPIENTEMAIL","MinWidth","180")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SUBJECT","MinWidth","180")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERRORDT","MinWidth","140")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ATTEMPT","MinWidth","55")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","CALLINGPRGM","MinWidth","85")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","READRECEIPT","MinWidth","65")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","DELETE","MinWidth","45")
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)	
+	gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ATTACHMENT","MinWidth","85")
+F.Intrinsic.Control.EndIf
+
+
+'Caption
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDERNAME","Caption","Sender Name")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDEREMAIL","Caption","Sender Email")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","RECIPIENTNAME","Caption","Recipient Name")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","RECIPIENTEMAIL","Caption","Recipient Email")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","NEXTDELIVERYATTEMPT","Caption","Next Delivery Attempt")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERROR","Caption","Error")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","USERID","Caption","User ID")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","COCODE","Caption","Company")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SUBJECT","Caption","Subject")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERRORDT","Caption","Error Date")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ATTEMPT","Caption","Attempt")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","CALLINGPRGM","Caption","CallingPrgm")
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","READRECEIPT","Caption","Read Rcpt")
+
+'AllowEdit
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","EID","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","COCODE","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","USERID","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ERRORDT","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","CALLINGPRGM","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","MODE","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","DONOTALLOWRESEND","AllowEdit",False)
+gui.dashboard.GsGCPending.SetColumnProperty("gvPending","SENDERNAME","AllowEdit",True)
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)	
+	gui.dashboard.GsGCPending.SetColumnProperty("gvPending","ATTACHMENT","AllowEdit",False)
+F.Intrinsic.Control.EndIf
+
+
+'Font Color
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCPending.SetColumnProperty("gvPending","Attachment","CellForeColor","Blue")
+F.Intrinsic.Control.EndIf
+
+
+'Font Underline
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCPending.SetColumnProperty("gvPending","Attachment","CellFontUnderline",True)
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.format_GsGCPending.End
+
+Program.Sub.format_GsGCFailed.Start
+		'Format GridControl
+		gui.dashboard.GsGCFailed.SetGridviewProperty("gvFailed","OptionsViewColumnAutoWidth",True)
+		gui.dashboard.GsGCFailed.SetGridviewProperty("gvFailed","EnableAppearanceEvenRow",True)
+		gui.dashboard.GsGCFailed.SetGridViewProperty("gvFailed","MultiSelect",True)
+		gui.dashboard.GsGCFailed.SetGridViewProperty("gvFailed","AllowFilter",True)
+		gui.dashboard.GsGCFailed.SetGridviewProperty("gvFailed","Editable", True)
+		gui.dashboard.GsGCFailed.SetGridviewProperty("gvFailed","ReadOnly", False)
+
+		
+		'Visible
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","REPLYTOADDRESS","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","MODE","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDERNAME","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","RECIPIENTNAME","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ADDITIONALHEADERS","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","EXCLUDEFROMHIST","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","DONOTALLOWRESEND","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","META0","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","META1","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","META2","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","META3","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","META4","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","BODY","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","DEFERREDDELIVERY","Visible",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","EID","Visible",False)
+		
+		
+		'MaxWidth
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","EID","MaxWidth","60")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","COCODE","MaxWidth","110")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","USERID","MaxWidth","90")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDERNAME","MaxWidth","160")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ATTEMPT","MaxWidth","160")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","NEXTDELIVERYATTEMPT","MaxWidth","300")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","Delete","MaxWidth","90")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","Queue","MaxWidth","90")		
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","AGE", "MaxWidth","150")
+		
+		'MinWidth
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","EID","MinWidth","30")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","NEXTDELIVERYATTEMPT","MinWidth","140")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ERROR","MinWidth","180")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","USERID","MinWidth","45")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDERNAME","MinWidth","120")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDEREMAIL","MinWidth","180")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","RECIPIENTNAME","MinWidth","120")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","RECIPIENTEMAIL","MinWidth","180")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SUBJECT","MinWidth","180")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ERRORDT","MinWidth","140")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ATTEMPT","MinWidth","55")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","READRECEIPT","MinWidth","65")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","DELETE","MinWidth","45")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","Queue","MinWidth","45")
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)		
+			gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ATTACHMENT","MinWidth","85")		
+		F.Intrinsic.Control.EndIf
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","AGE","MinWidth","75")
+		
+		'ToolTip
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","AGE","ToolTip","Best estimate")
+		
+		
+		'AllowEdit
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","EID","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","COCODE","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","USERID","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ERRORDT","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","CALLINGPRGM","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","MODE","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","DONOTALLOWRESEND","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDERNAME","AllowEdit",True)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","AGE","AllowEdit",False)
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvfailed","READRECEIPT","AllowEdit",False)
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)	
+			gui.dashboard.GsGCFailed.SetColumnProperty("gvfailed","ATTACHMENT","AllowEdit",False)		
+		F.Intrinsic.Control.EndIf
+		
+		
+		'Caption
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDERNAME","Caption","Sender Name")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SENDEREMAIL","Caption","Sender Email")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","RECIPIENTNAME","Caption","Recipient Name")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","RECIPIENTEMAIL","Caption","Recipient Email")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","NEXTDELIVERYATTEMPT","Caption","Next Delivery Attempt")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ERROR","Caption","Error")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","USERID","Caption","User ID")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","COCODE","Caption","Company")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","SUBJECT","Caption","Subject")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ERRORDT","Caption","Error Date")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","ATTEMPT","Caption","Attempt")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","CALLINGPRGM","Caption","Source")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","READRECEIPT","Caption","Read Rcpt")
+		gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","AGE","Caption","Days Old")
+		
+		'Font Color
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)	
+			gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","Attachment","CellForeColor","Blue")
+		F.Intrinsic.Control.EndIf
+		
+		'Font Underline
+		F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)	
+			gui.dashboard.GsGCFailed.SetColumnProperty("gvFailed","Attachment","CellFontUnderline",True)
+		F.Intrinsic.Control.EndIf
+		
+Program.Sub.format_GsGCFailed.End
+
+Program.Sub.format_GsGCSent.Start
+'GridView
+gui.dashboard.GsGCSent.BestFitColumns("gvSent")
+gui.dashboard.GsGCSent.SetGridviewProperty("gvSent","OptionsViewColumnAutoWidth",False)
+gui.dashboard.GsGCSent.SetGridviewProperty("gvSent","EnableAppearanceEvenRow",True)
+gui.dashboard.GSGCSent.SetGridViewProperty("gvSent","MultiSelect",True)
+gui.dashboard.GsGCSent.SetGridViewProperty("gvSent","AllowFilter",True)'
+
+'Visible
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","EHID","Visible",False)
+
+'MaxWidth
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","USERID","MaxWidth","55")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","SUBJECT","MaxWidth","250")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","SENDER","MaxWidth","200")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","RecipientEmail","MaxWidth","200")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","SENT","MaxWidth","150")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Delete","MaxWidth","110")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","SenderEmail","MaxWidth","400")
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Attachment","MaxWidth","500")
+F.Intrinsic.Control.EndIf
+
+'CellTrimming
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","SENDER","CellTrimming","none")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","SenderEmail","CellTrimming","none")
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","RecipientEmail","CellTrimming","none")
+
+'AllowEdit
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Delete","AllowEdit",True)
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Attachment","AllowEdit",False)
+F.Intrinsic.Control.EndIf
+
+'ReadOnly
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Attachment","ReadOnly",True)
+F.Intrinsic.Control.EndIf
+gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Delete","ReadOnly",False)
+
+'Font Color
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Attachment","CellForeColor","Blue")
+F.Intrinsic.Control.EndIf
+
+'Font Underline
+F.Intrinsic.Control.If(V.Screen.dashboard!chkInclAttach.Value,=,1)
+	gui.dashboard.GsGCSent.SetColumnProperty("gvSent","Attachment","CellFontUnderline",True)
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.format_GsGCSent.End
+
+Program.Sub.Load_ToolTips.Start
+		Gui.dashboard.optCourier2.ToolTip("Courier2 Mode")
+		Gui.dashboard.optCourier3.ToolTip("Courier3 Mode")
+		Gui.dashboard.chkLogging.ToolTip("Enable Recommended")
+		Gui.dashboard.chkDebug.ToolTip("Enable Recommended")
+		Gui.dashboard.chkInclAttach.ToolTip("Affects performance")
+		Gui.dashboard.lblRetry.ToolTip("Intervals set in minutes")
+		Gui.dashboard.lbl2nd.ToolTip("Intervals set in minutes")
+		Gui.dashboard.lbl3rd.ToolTip("Intervals set in minutes")
+		Gui.dashboard.lbl4th.ToolTip("Intervals set in minutes")
+		Gui.dashboard.btnRefresh.ToolTip("Refresh email data")
+		Gui.dashboard.btnRefresh2.ToolTip("Refresh Courier status")
+		Gui.dashboard.btnSave.ToolTip("Save changes made to email records")
+		Gui.dashboard.btnSaveOpt.ToolTip("Save changes made to Courier options")
+		Gui.dashboard.chkAllUsers.ToolTip("Show/Hide sent emails for all users")
+		Gui.dashboard.btnReQ.ToolTip("Reschedule selected emails for processing at next Courier interval")
+		Gui.dashboard.btnDel.ToolTip("Delete selected emails from system")
+Program.Sub.Load_ToolTips.End
+
+Program.Sub.Serialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+		V.Local.sSerialize.Declare
+		
+		'gvSent
+		Gui.dashboard.GsGCSent.Serialize("gvSent", V.Local.sSerialize)
+		F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVSENT",5095,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+		'gvPending
+		Gui.dashboard.GSGCPending.Serialize("gvPending",V.Local.sSerialize)
+		F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVPENDING",5095,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+		'gvFailed
+		Gui.dashboard.GSGCFailed.Serialize("gvFailed",V.Local.sSerialize)
+		F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVFAILED",5095,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+		
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+
+	F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+		V.Local.sSerialize.Declare
+		
+		'Delete old registry records
+		F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVSENT",5095,0,5,"",V.Local.sSerialize)
+		F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+			F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+			F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5095 And Seq < 1000;")
+			F.ODBC.Connection!common.Close
+		F.Intrinsic.Control.EndIf
+	
+		'gvSent
+		F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVSENT",5095,1000,6,"",V.Local.sSerialize)
+		F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+			Gui.dashboard.GsGCSent.Deserialize(V.Local.sSerialize)
+		F.Intrinsic.Control.EndIf
+		'gvPending
+		F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVPENDING",5095,1000,6,"",V.Local.sSerialize)
+		F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+			Gui.dashboard.GsGCPending.Deserialize(V.Local.sSerialize)
+		F.Intrinsic.Control.EndIf
+		'gvFailed
+		F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVFAILED",5095,1000,6,"",V.Local.sSerialize)
+		F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+			Gui.dashboard.GsGCFailed.Deserialize(V.Local.sSerialize)
+		F.Intrinsic.Control.EndIf
+
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+
+	F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Export.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.bExcel.Declare
+	V.Local.sControl.Declare
+	V.Local.sFileExport.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare	
+
+	F.Intrinsic.Control.SelectCase(V.Screen.dashboard!tabCourier.Tab)
+		F.Intrinsic.Control.Case(0)
+			V.Local.sControl.Set("gsgcSent")
+		F.Intrinsic.Control.Case(1)
+			V.Local.sControl.Set("gsgcPending")
+		F.Intrinsic.Control.Case(2)
+			V.Local.sControl.Set("gsgcFailed")
+	F.Intrinsic.Control.EndSelect	
+	
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\Courier_{1}_Export.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.dashboard.[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\Courier_{1}_Export.csv",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.dashboard.[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+	
+
+	F.Intrinsic.Control.Catch(5700)
+			F.Intrinsic.String.Build("Script: {0}{1}{1}File not created.{1}{6}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sFileExport,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Script: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.Export.End
+
+Program.Sub.generateAttach.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+		
+		'Generate attachment file from BLOB data in COURIER_EMAILATTACH and COURIER_EMLHISTATT
+		
+		V.Local.sSQLAHID.Declare
+		V.Local.sAttach.Declare
+
+		F.Intrinsic.Control.SelectCase(V.Screen.dashboard!tabCourier.Tab)
+			F.Intrinsic.Control.Case(0)
+				F.Intrinsic.String.Build("SELECT ATTACHMENT, ATTACHMENTNAME FROM COURIER_EMLHISTATT WHERE EHID = {0}",V.Args.iEID,V.Local.sSQLAHID)
+			F.Intrinsic.Control.Case(1)
+				F.Intrinsic.String.Build("SELECT ATTACHMENT, ATTACHMENTNAME FROM COURIER_EMAILATTACH WHERE EID = {0}",V.Args.iEID,V.Local.sSQLAHID)
+			F.Intrinsic.Control.Case(2)
+				F.Intrinsic.String.Build("SELECT ATTACHMENT, ATTACHMENTNAME FROM COURIER_EMAILATTACH WHERE EID = {0}",V.Args.iEID,V.Local.sSQLAHID)
+		F.Intrinsic.Control.EndSelect
+		
+		f.ODBC.connection!con.OpenRecordSetRO("rstAttach",V.Local.sSQLAHID)
+		F.Intrinsic.Control.If(V.ODBC.con!rstAttach.EOF,<>, True)
+			F.Intrinsic.String.Build("{0}\{1}",V.Caller.LocalGSSTempDir,V.ODBC.con!rstAttach.FieldValTrim!AttachmentName,V.Local.sAttach)
+			Function.ODBC.con!rstAttach.SaveBLOBtoFile("ATTACHMENT",V.Local.sAttach)
+			F.Intrinsic.Variable.AddRV("sAttach",V.Local.sAttach)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("False")
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstAttach.Close()
+		
+		
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Script: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.generateAttach.End
+
+Program.Sub.RowCellClick.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+		
+		V.Local.sFQP.Declare
+		V.Local.iXPos.Declare
+		V.Local.iYPos.Declare
+		v.Local.bExists.Declare
+		V.Local.sAttachments.Declare
+		V.Local.iCnt.Declare
+		V.Local.sControl.Declare
+		
+			F.Intrinsic.Control.SelectCase(V.Screen.dashboard!tabCourier.Tab)
+				F.Intrinsic.Control.Case(0)
+					V.Local.sControl.Set("dtSent")
+				F.Intrinsic.Control.Case(1)
+					V.Local.sControl.Set("dtPending")
+				F.Intrinsic.Control.Case(2)
+					V.Local.sControl.Set("dtFailed")
+			F.Intrinsic.Control.EndSelect	
+		
+		f.Intrinsic.Control.BlockEvents
+		Function.Intrinsic.Control.SelectCase(V.Args.Column)
+			Function.Intrinsic.Control.Case("Attachment")
+		
+				F.Intrinsic.String.Split(V.Args.CellValue,",",V.Local.sAttachments)
+				'F.Intrinsic.UI.Msgbox(V.DataTable.[V.Local.sControl](V.Args.RowIndex).EID!FieldValTrim)
+				F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sAttachments.UBound,1)	
+					F.Intrinsic.Control.If(V.Screen.dashboard!tabCourier.Tab,=,0)
+						F.Intrinsic.Control.CallSub(generateAttach,"iEID",V.DataTable.[V.Local.sControl](V.Args.RowIndex).EHID!FieldValTrim)					
+					F.Intrinsic.Control.Else
+						F.Intrinsic.Control.CallSub(generateAttach,"iEID",V.DataTable.[V.Local.sControl](V.Args.RowIndex).EID!FieldValTrim)					
+					F.Intrinsic.Control.EndIf
+
+					'F.Intrinsic.Control.CallSub(generateAttach,"EID",Gui.dashboard.[V.Local.sControl](V.Args.Row).FieldValTrim!EHID)
+					f.Intrinsic.File.Exists(V.Args.sAttach,v.Local.bExists)
+					f.Intrinsic.Control.If(v.Local.bExists.not)
+						f.Intrinsic.UI.Msgbox("File not found")
+						f.Intrinsic.Control.ExitSub
+					F.Intrinsic.Control.Endif
+					F.Intrinsic.Task.ShellExec(V.Caller.Handle,"open",V.Args.sAttach,"","",0)
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+				
+		Function.Intrinsic.Control.EndSelect
+		
+		f.Intrinsic.Control.UnBlockEvents
+		
+		F.Intrinsic.Control.ExitSub
+
+	F.Intrinsic.Control.Catch
+			F.Intrinsic.String.Build("Script: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+
+Program.Sub.RowCellClick.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$6/10/2016 11:54:41 AM$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$Sent to Print directly Packing List those users - rptid in the table
+${$5$}$20.1.8707.19693$}$0
+${$6$}$pgrekstas$}$20231107173209943$}$6p6WpyolxJED9Z3JN1EOjQ5MHtlEb3AW4fXjopsZC+Sj1Qv29bs+isYEy1JdujzZetjZ4LUFKnE+8x/3eK/DYQ==
+Program.Sub.Comments.End
